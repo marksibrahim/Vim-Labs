@@ -15,11 +15,10 @@
 <style type="text/css" media="screen">
     .ace_editor {
         position: relative !important;
-        border: 1px solid lightgray;
         margin: auto;
-        height: 400px;
+        height: 500px;
         width: 80%;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     }
 
     .ace_editor.fullScreen {
@@ -68,9 +67,6 @@
         <a id="logo-container" href="#" class="brand-logo white-text"> 
             <i class="material-icons">subtitles</i>Vim Labs
         </a>
-      <ul class="right hide-on-med-and-down">
-        <li><a href="#" class="white-text">Start</a></li>
-      </ul>
 
       <ul id="nav-mobile" class="side-nav">
         <li><a href="#" class="blue-text">Start</a></li>
@@ -84,6 +80,24 @@
     <div class="section">
         <div class="row">
         <div class="col s6 ">
+            <!-- TABS -->
+      <ul class="tabs tabs-transparent">
+        <li class="tab col s3"><a href="#test1">Test 1</a></li>
+        <li class="tab col s3"><a class="active" href="#test2">Test 2</a></li>
+        <li class="tab col s3"><a href="#test4">Test 4</a></li>
+      </ul>
+
+
+            <div id="test1">
+            <p class="flow-text right-align blue-grey-text text-lighten-4">
+            This is test 1 stuff
+            </p>
+      <span class="chip">:w</span>
+      <span class="chip">:wq</span>
+            </p>
+            </div>
+
+            <div id="test2">
             <p class="flow-text right-align blue-grey-text text-lighten-4">
             try it
             <i class="tiny material-icons">play_arrow </i>
@@ -93,15 +107,11 @@ This is the explanation
 When you write something, make it clear. 
       <span class="chip">:w</span>
       <span class="chip">:wq</span>
-
-
-
-
             </p>
-            
-        </div>
-        <div class="col s6 " id="editor">
+            </div>
 
+        </div>
+        <div class="col s6" id="editor">
     function foo(items) {
         var x = "All this is syntax highlighted";
         return x;
@@ -114,28 +124,19 @@ When you write something, make it clear.
 
   <div class="container">
     <div class="section">
-      <div class="row">
-        <div class="col s12 center">
-
-  <ul class="pagination">
-    <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
-    <li class="active"><a href="#!">1</a></li>
-    <li class="waves-effect"><a href="#!">2</a></li>
-    <li class="waves-effect"><a href="#!">3</a></li>
-    <li class="waves-effect"><a href="#!">4</a></li>
-    <li class="waves-effect"><a href="#!">5</a></li>
-    <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
-  </ul>
-          <h3><i class="mdi-content-send brown-text"></i></h3>
-          <h4>Concept Title</h4>
-          <p class="left-align light">Here I'll add details, configuration settings.Maybe keep the same text here, but change the text near the vim editor.</p>
-        </div>
-      </div>
         <div class="row center">
           <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light  indigo accent-2">Start
               <i class="material-icons right">code</i>
           </a>
         </div>
+      <div class="row">
+        <div class="col s12 center">
+
+          <h3><i class="mdi-content-send brown-text"></i></h3>
+          <h4>Concept Title</h4>
+          <p class="left-align light">Here I'll add details, configuration settings.Maybe keep the same text here, but change the text near the vim editor.</p>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -161,9 +162,17 @@ When you write something, make it clear.
   <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.6/ace.js"></script>
 <script>
     var editor = ace.edit("editor");
-    editor.setTheme("ace/theme/solarized_dark");
+    editor.setTheme("ace/theme/clouds_midnight");
     editor.getSession().setMode("ace/mode/javascript");
     editor.setKeyboardHandler("ace/keyboard/vim");
+</script>
+
+<!-- Tabs -->
+<script>
+  $(document).ready(function(){
+          $('ul.tabs').tabs();
+            });
+        
 </script>
 
 
