@@ -82,28 +82,30 @@
         <div class="col s6 ">
             <!-- TABS -->
       <ul class="tabs tabs-transparent">
-        <li class="tab col s3"><a href="#test1">Test 1</a></li>
-        <li class="tab col s3"><a class="active" href="#test2">Test 2</a></li>
-        <li class="tab col s3"><a href="#test4">Test 4</a></li>
+          <li class="tab col s3"><a class="active" href="#step1">1: Modes </a></li>
+        <li class="tab col s3"><a href="#step2">2: Moving</a></li>
+        <li class="tab col s3"><a href="#step3">3: Faster</a></li>
+        <li class="tab col s3"><a href="#step4">4: Jumping</a></li>
       </ul>
 
-
-            <div id="test1">
-            <p class="flow-text right-align blue-grey-text text-lighten-4">
-            This is test 1 stuff
+            <div id="step1">
+            <p class="flow-text right-align teal-text text-lighten-1">
+            try it
+            <i class="tiny material-icons">play_arrow </i>
             </p>
-            <p>
+<p class="right-align blue-grey-text text-lighten-4">
+This is the explanation
+When you write something, make it clear. 
       <span class="chip">:w</span>
       <span class="chip">:wq</span>
             </p>
             </div>
 
-            <div id="test2">
-            <p class="flow-text right-align blue-grey-text text-lighten-4">
-            try it
-            <i class="tiny material-icons">play_arrow </i>
+            <div id="step2">
+            <p class="flow-text center-align teal-text text-lighten-1">
+            >> moving around
             </p>
-<p class="flow-text right-align grey-text text-lighten-4">
+<p class="right-align blue-grey-text text-lighten-4">
 This is the explanation
 When you write something, make it clear. 
       <span class="chip">:w</span>
@@ -112,34 +114,37 @@ When you write something, make it clear.
             </div>
 
         </div>
+
         <div class="col s6" id="editor">
-    function foo(items) {
-        var x = "All this is syntax highlighted";
-        return x;
-    }
+"""
+learn vim interactively
+"""
+
+def greeting():
+    yield "Howdy! I'm almighty Vim."
+    yield "Type right in here to learn"
+
+greeting()
+
+
+"""
+You can always find help on the left
+
+As you learn, be adventerous. 
+There's nothing here to break. 
+"""
+
+next = "Vim Super Powers"
+
+
+
         </div>
 
         </div>
     </div>
+  
   </div>
 
-  <div class="container">
-    <div class="section">
-        <div class="row center">
-          <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light  indigo accent-2">Start
-              <i class="material-icons right">code</i>
-          </a>
-        </div>
-      <div class="row">
-        <div class="col s12 center">
-
-          <h3><i class="mdi-content-send brown-text"></i></h3>
-          <h4>Concept Title</h4>
-          <p class="left-align light">Here I'll add details, configuration settings.Maybe keep the same text here, but change the text near the vim editor.</p>
-        </div>
-      </div>
-    </div>
-  </div>
 
   <div class="container">
     <div class="section">
@@ -164,7 +169,7 @@ When you write something, make it clear.
 <script>
     var editor = ace.edit("editor");
     editor.setTheme("ace/theme/clouds_midnight");
-    editor.getSession().setMode("ace/mode/javascript");
+    editor.getSession().setMode("ace/mode/python");
     editor.setKeyboardHandler("ace/keyboard/vim");
 </script>
 
