@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+  <title>Vim Labs</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/custom.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+
+    <!-- ACE EDITOR -->
+<style type="text/css" media="screen">
+    .ace_editor {
+        position: relative !important;
+        margin: auto;
+        height: 500px;
+        width: 80%;
+        box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+
+    .ace_editor.fullScreen {
+        height: auto;
+        width: auto;
+        border: 0;
+        margin: 0;
+        position: fixed !important;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 10;
+    }
+
+    .fullScreen {
+        overflow: hidden
+    }
+
+    .scrollmargin {
+        height: 500px;
+        text-align: center;
+    }
+
+    .large-button {
+        color: lightblue;
+        cursor: pointer;
+        font: 30px arial;
+        padding: 20px;
+        text-align: center;
+        border: medium solid transparent;
+        display: inline-block;
+    }
+    .large-button:hover {
+        border: medium solid lightgray;
+        border-radius: 10px 10px 10px 10px;
+        box-shadow: 0 0 12px 0 lightblue;
+    }
+</style>
+</head>
+
+<body style="background-color: #1c2834;">
+    <main>
+  <nav style="background-color: #19242f;" role="navigation">
+    <div class="nav-wrapper container">
+        <a id="logo-container" href="#" class="brand-logo white-text"> 
+            <i class="material-icons">subtitles</i>Vim Labs
+        </a>
+
+      <ul id="nav-mobile" class="side-nav">
+        <li><a href="#" class="blue-text">Start</a></li>
+      </ul>
+      <a href="#" data-activates="nav-mobile" class="button-collapse white-text"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+
+
+  <div class="container">
+    <div class="section">
+        <div class="row">
+        <div class="col s6 ">
+            <!-- TABS -->
+      <ul class="tabs tabs-transparent">
+          <li class="tab col s3"><a class="active" href="#step1">1: Modes </a></li>
+        <li class="tab col s3"><a href="#step2">2: Moving</a></li>
+        <li class="tab col s3"><a href="#step3">3: Faster</a></li>
+        <li class="tab col s3"><a href="#step4">4: Jumping</a></li>
+      </ul>
+
+            <!--- STEP 1 -->
+            <div id="step1">
+            <p class="flow-text right-align teal-text text-lighten-1">
+            try it
+            <i class="tiny material-icons">play_arrow </i>
+            </p>
+<p class="left-align blue-grey-text text-lighten-3">
+Vim's power is based on modes
+<br>
+<b>Normal Mode</b>
+is what you're in now 
+<br>
+<br>
+Type 
+<span class="chip">i</span>
+to enter
+<b>Insert Mode</b>
+<br>
+Now type text like anywhere else
+</p>
+<blockquote class="blue-grey-text">
+try typing your name inside the parenthesis on line 10
+</blockquote>
+<p class="left-align blue-grey-text text-lighten-3">
+<br>
+Once finished
+<span class="chip">ESC</span>
+to return to 
+<b>Normal Mode</b>
+<br>
+            </p>
+            </div>
+            <!--- STEP 1 END -->
+
+            <!--- STEP 2 -->
+            <div id="step2">
+<p class="left-align blue-grey-text text-lighten-3">
+As you gain Vim superpowers, you'll learn to rely on the keyboard (not the mouse).
+<br>
+&emsp;
+<span class="chip">j</span>
+to move down
+<br>
+&emsp;
+<span class="chip">k</span>
+to move up
+</p>
+<blockquote class="blue-grey-text">
+your index finger naturally rests on 'j'
+</blockquote>
+<p class="left-align blue-grey-text text-lighten-3">
+<br>
+You can also navigate paragraphs:
+<br>
+&emsp;
+<span class="chip">]</span>
+down a paragaph
+<br>
+&emsp;
+<span class="chip">[</span>
+up a paragraph
+            </p>
+<blockquote class="blue-grey-text">
+    down a paragraph = next blank line
+</blockquote>
+            </div>
+            <!--- STEP 2 END -->
+
+            <!--- STEP 3 -->
+<div id="step3">
+<p class="left-align blue-grey-text text-lighten-3">
+Let's kick it up a notch
+<br>
+&emsp;
+<span class="chip">G</span>
+jump to the bottom
+<br>
+&emsp;
+<span class="chip">gg</span>
+jump to the top
+<br>
+</p>
+<blockquote class="blue-grey-text">
+    Vim understands words, paragraphs, and other text objects
+</blockquote>
+<p class="left-align blue-grey-text text-lighten-3">
+You can navigate words
+<br>
+&emsp;
+<span class="chip">w</span>
+next word (first letter)
+<br>
+&emsp;
+<span class="chip">e</span>
+next word (last letter)
+<br>
+<br>
+&emsp;
+<span class="chip">b</span>
+previous word (first letter)
+            </p>
+            </div>
+            <!--- STEP 3 END -->
+
+            <!--- STEP 4 -->
+<div id="step4">
+<p class="left-align blue-grey-text text-lighten-3">
+You can jump directly to any character on a line
+<br>
+&emsp;
+<span class="chip">f + character</span>
+</p>
+<blockquote class="blue-grey-text">
+    from the start of line 7, type 'f' followed by 'V'
+</blockquote>
+<p class="left-align blue-grey-text text-lighten-3">
+You can go backwards using
+<br>
+&emsp;
+<span class="chip">F + character</span>
+<br>
+<br>
+Once finished
+<span class="chip">:w</span>
+saves your work.
+<br>
+<br>
+<hr>
+<br>
+<div class="row center">
+          <a href="module.html" id="download-button" class="btn-large waves-effect waves-light  indigo accent-2">Next
+              <i class="material-icons right">play_arrow
+              </i>
+          </a>
+          <br>
+          <br>
+          <a href="module.html" id="download-button" class="btn-large waves-effect waves-light  indigo accent-2"> Modules
+              <i class="material-icons right">
+                  view_module
+              </i>
+          </a>
+        </div>
+            </p>
+            </div>
+            <!--- STEP 4 END -->
+
+
+        </div>
+
+        <!--- EDITOR SETTINGS-->
+        <div class="col s6" id="editor">
+"""
+learn vim interactively
+"""
+
+def greeting():
+    yield "Howdy! I'm almighty Vim."
+    yield "Type right in here to learn"
+
+greeting()
+
+
+"""
+You can always find help on the left
+
+As you learn, be adventerous. 
+There's nothing here to break. 
+"""
+
+next = "Vim Super Powers"
+
+
+
+        </div>
+        </div>
+    </div>
+  
+  </div>
+
+
+  
+  <div class="container">
+    <div class="section">
+      </div>
+  </div>
+    </main>
+  <footer class="page-footer" style="background-color:#111921;">
+    <div class="footer-copyright" style="background-color:#111921;">
+      <div class="container">
+      Made by <a class="blue-grey-text text-lighten-1" href="http://markibrahim.me/">Mark Ibrahim</a>
+      </div>
+    </div>
+  </footer>
+
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.6/ace.js"></script>
+<script>
+    var editor = ace.edit("editor");
+    editor.setTheme("ace/theme/clouds_midnight");
+    editor.getSession().setMode("ace/mode/python");
+    editor.setKeyboardHandler("ace/keyboard/vim");
+</script>
+
+<!-- Tabs -->
+<script>
+  $(document).ready(function(){
+          $('ul.tabs').tabs();
+            });
+        
+</script>
+
+
+  </body>
+</html>
