@@ -100,41 +100,41 @@
             </p>
 <p class="left-align blue-grey-text text-lighten-3">
 Vim's syntax is intuitive:
-<b> Actions</b> operating on 
-text<b> Objects</b>
+<span class="red-text"><b> Actions</b></span> operating on 
+text <span class="green-text"><b> Objects</b></span>
 <br>
 <br>
 </p>
 <blockquote class="blue-grey-text">
 try typing
 '
-<span class="chip">d</span>
+<span class="chip red">d</span>
 +
 <span class="chip">a</span>
 +
-<span class="chip">w</span>
+<span class="chip green">w</span>
 '
 to delete the word under your cursor
 </blockquote>
 <p class="left-align blue-grey-text text-lighten-3">
-<span class="chip">d</span>
+<span class="chip red">d</span>
 is the delete <b> Action</b>
 <br>
 <span class="chip">a</span>
 is around
 <br>
-<span class="chip">w</span>
+<span class="chip green">w</span>
 w is word.
 <br>
 <br>
 This syntax generalizes to sentences, paragraphs, quotes, and other objects. 
 To delete a paragraph:
 '
-<span class="chip">d</span>
+<span class="chip red">d</span>
 +
 <span class="chip">a</span>
 +
-<span class="chip">p</span>
+<span class="chip green">p</span>
 '
 <br>
             </p>
@@ -144,34 +144,62 @@ To delete a paragraph:
             <!--- STEP 2 -->
             <div id="step2">
 <p class="left-align blue-grey-text text-lighten-3">
-As you gain Vim superpowers, you'll learn to rely on the keyboard (not the mouse).
+Handy Actions:
+around, inside
+paragraphs, quotes, brackets, sentences, words
 <br>
 &emsp;
-<span class="chip">j</span>
-to move down
+<span class="chip red">d</span>
+delete
 <br>
 &emsp;
-<span class="chip">k</span>
-to move up
+<span class="chip red">c</span>
+to change (deletes and puts you in insert mode)
+<br>
+&emsp;
+<span class="chip red">y</span>
+yank (vim lingo for copy)
 </p>
-<blockquote class="blue-grey-text">
-your index finger naturally rests on 'j'
-</blockquote>
 <p class="left-align blue-grey-text text-lighten-3">
-<br>
-You can also navigate paragraphs:
+These actions can operate
+<span class="chip">a</span>
+around
+or 
+<span class="chip">i</span>
+inside
+</p>
+<p class="left-align blue-grey-text text-lighten-3">
+Objects like a
+<span class="chip green">p</span>
+paragraph or
+<span class="chip green">s</span>
+sentence, but also
 <br>
 &emsp;
-<span class="chip">]</span>
-down a paragaph
+<span class="chip green">"</span>
+quotes,
+<span class="chip green">(</span>
+and parenthesis.
 <br>
-&emsp;
-<span class="chip">[</span>
-up a paragraph
-            </p>
+<br>
+So we can, 
+<span class="chip red">d</span>
++
+<span class="chip">a</span>
++
+<span class="chip green">s</span> to delete a sentence.
 <blockquote class="blue-grey-text">
-    down a paragraph = next blank line
+try
+'
+<span class="chip red">d</span>
++
+<span class="chip">i</span>
++
+<span class="chip green">"</span>
+'
+inside the parenthesis in line 8. Ain't it magic?
 </blockquote>
+            </p>
             </div>
             <!--- STEP 2 END -->
 
