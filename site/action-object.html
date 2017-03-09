@@ -104,23 +104,38 @@ Vim's syntax is intuitive:
 text<b> Objects</b>
 <br>
 <br>
-<br>
-Type 
-<span class="chip">i</span>
-to enter
-<b>Insert Mode</b>
-<br>
-Now type text like anywhere else
 </p>
 <blockquote class="blue-grey-text">
-try typing your name inside the parenthesis on line 10
+try typing
+'
+<span class="chip">d</span>
++
+<span class="chip">a</span>
++
+<span class="chip">w</span>
+'
+to delete the word under your cursor
 </blockquote>
 <p class="left-align blue-grey-text text-lighten-3">
+<span class="chip">d</span>
+is the delete <b> Action</b>
 <br>
-Once finished
-<span class="chip">ESC</span>
-to return to 
-<b>Normal Mode</b>
+<span class="chip">a</span>
+is around
+<br>
+<span class="chip">w</span>
+w is word.
+<br>
+<br>
+This syntax generalizes to sentences, paragraphs, quotes, and other objects. 
+To delete a paragraph:
+'
+<span class="chip">d</span>
++
+<span class="chip">a</span>
++
+<span class="chip">p</span>
+'
 <br>
             </p>
             </div>
@@ -247,22 +262,22 @@ saves your work.
 learn vim interactively
 """
 
-def greeting():
-    yield "Howdy! I'm almighty Vim."
-    yield "Type right in here to learn"
 
-greeting()
+def useless():
+    x = "delete me"
+    return None
 
 
 """
-You can always find help on the left
-
-As you learn, be adventerous. 
-There's nothing here to break. 
+I'm a useless paragraph. Full of
+mumbojumbo. Please delete 
+all of me, so I don't clutter 
+this workspace. 
+Can you do it with a single action on a object?
 """
 
-next = "Vim Super Powers"
 
+next = "superpowers: actions + objects"
 
 
         </div>
