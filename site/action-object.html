@@ -182,12 +182,6 @@ quotes,
 and parenthesis.
 <br>
 <br>
-So we can, 
-<span class="chip red">d</span>
-+
-<span class="chip">a</span>
-+
-<span class="chip green">s</span> to delete a sentence.
 <blockquote class="blue-grey-text">
 try
 '
@@ -206,79 +200,87 @@ inside the parenthesis in line 8. Ain't it magic?
             <!--- STEP 3 -->
 <div id="step3">
 <p class="left-align blue-grey-text text-lighten-3">
-Let's kick it up a notch
+You just delete a word. Now type 
+<blockquote class="blue-grey-text">
+try
+'
+<span class="chip red">d</span>
++
+<span class="chip green">w</span>
+'
+at the start of line 13. 
+</blockquote>
+</p>
+<p class="left-align blue-grey-text text-lighten-3">
+You just delete a word. 
 <br>
-&emsp;
-<span class="chip">G</span>
-jump to the bottom
+To repeat the last action, just type:
+<span class="chip">.</span>
 <br>
-&emsp;
-<span class="chip">gg</span>
-jump to the top
 <br>
+
+You can also run an action any number of times. Try adding 3 before deleting a word:
+<blockquote class="blue-grey-text">
+'
+<span class="chip red">3</span>
++
+<span class="chip red">d</span>
++
+<span class="chip green">w</span>
+'
+at the start of line 13. 
+</blockquote>
+</p>
+<p class="left-align blue-grey-text text-lighten-3">
+You can also repeat motions. Try moving to the next space:
 </p>
 <blockquote class="blue-grey-text">
-    Vim understands words, paragraphs, and other text objects
+'
+<span class="chip yellow">f</span>
++
+<span class="chip green">space</span>
+'
 </blockquote>
 <p class="left-align blue-grey-text text-lighten-3">
-You can navigate words
-<br>
-&emsp;
-<span class="chip">w</span>
-next word (first letter)
-<br>
-&emsp;
-<span class="chip">e</span>
-next word (last letter)
-<br>
-<br>
-&emsp;
-<span class="chip">b</span>
-previous word (first letter)
-            </p>
+To repeat the motion, just type: 
+<span class="chip">;</span>
+</p>
+
             </div>
             <!--- STEP 3 END -->
 
             <!--- STEP 4 -->
 <div id="step4">
 <p class="left-align blue-grey-text text-lighten-3">
-You can jump directly to any character on a line
-<br>
-&emsp;
-<span class="chip">f + character</span>
+One common operation is changing text inside quotes. 
 </p>
 <blockquote class="blue-grey-text">
-    from the start of line 7, type 'f' followed by 'V'
+    change the value of x on line 8:
+    <br>
+'
+<span class="chip red">c</span>
++
+<span class="chip">i</span>
++
+<span class="chip green">"</span>
+'
 </blockquote>
+
 <p class="left-align blue-grey-text text-lighten-3">
-You can go backwards using
-<br>
-&emsp;
-<span class="chip">F + character</span>
+You can do the same for [], (), and {}.
 <br>
 <br>
-Once finished
-<span class="chip">:w</span>
-saves your work.
+In Vim you don't need to memorize many complex commands. 
 <br>
-<br>
-<hr>
-<br>
-<div class="row center">
-          <a href="action-object.html" id="next-module" class="btn-large waves-effect waves-light  indigo accent-2">Next
-              <i class="material-icons right">play_arrow
-              </i>
-          </a>
-&emsp;
-&emsp;
-          <a href="landing.html#modules" id="modules" class="btn-large waves-effect waves-light red"> Modules
-              <i class="material-icons right">
-                  view_module
-              </i>
-          </a>
-        </div>
-            </p>
-            </div>
+Just learn a few useful actions and common objects. Then combining them is as natural as saying "delete inside brackets!
+
+<blockquote class="blue-grey-text">
+    <b>Challenge</b>: can you delete the useless paragraph in quotes in only three keystrokes?
+</blockquote>
+</p>
+
+
+</div>
             <!--- STEP 4 END -->
 
 
@@ -293,11 +295,12 @@ learn vim interactively
 
 def useless():
     x = "delete me"
+    my_list = [thing1, thing2, thing3]
     return None
 
 
 """
-I'm a useless paragraph. Full of
+This is a useless paragraph. Full of
 mumbojumbo. Please delete 
 all of me, so I don't clutter 
 this workspace. 
