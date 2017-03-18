@@ -1,48 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
-  <title>Vim Labs</title>
+{% extends "layout-skeleton.html" %}
 
-  <!-- CSS  -->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <link href="css/custom.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-
-</head>
-
-<body style="background-color: #1c2834;">
-    <main>
-  <nav style="background-color: #19242f;" role="navigation">
-    <div class="nav-wrapper container">
-        <a id="logo-container" href="#" class="brand-logo white-text"> 
-            <i class="material-icons">subtitles</i>Vim Labs
-        </a>
-    </div>
-  </nav>
-
-
-  <div class="container">
+{% block top_block %}
     <div class="section">
         <div class="row">
         <div class="col s2">
         </div>
         <div class="col s8">
-            <img class="responsive-img center-align z-depth-4" src="vim-labs-demo.gif">
+            <img class="responsive-img center-align z-depth-4" src="{{ url_for('static', filename='img/vim-labs-demo.gif') }}">
 
         </div>
         <div class="col s2">
         </div>
         </div>
     </div>
-  </div>
+{% endblock %}
 
-  <div class="container">
-    <div class="section">
+{% block page_content %}
         <div class="row center">
-          <a href="basic-editing.html" id="Get Started" class="btn-large waves-effect waves-light  indigo accent-2">Start
+            <a href="{{ url_for('module', number=1) }}" id="Get Started" class="btn-large waves-effect waves-light  indigo accent-2">Start
               <i class="material-icons right">play_arrow
               </i>
           </a>
@@ -68,7 +43,7 @@
               <br></p>
             </div>
             <div class="card-action">
-              <a href="basic-editing.html">Learn Now
+                <a href="{{ url_for('module', number=1) }}">Learn Now
               <i class="material-icons right">play_arrow
               </i>
               </a>
@@ -83,7 +58,7 @@
               <p>Learn Vim's elegant syntax for editing text. </p>
             </div>
             <div class="card-action">
-              <a href="action-object.html">Learn Now
+              <a href="{{ url_for('module', number=2) }}">Learn Now
               <i class="material-icons right">play_arrow
               </i>
               </a>
@@ -98,7 +73,7 @@
               <p>Learn how to move efficiently within a file.</p>
             </div>
             <div class="card-action">
-              <a href="basic-editing.html">Learn Now
+              <a href="{{ url_for('module', number=3) }}">Learn Now
               <i class="material-icons right">play_arrow
               </i>
               </a>
@@ -109,29 +84,5 @@
 
         </div>
       </div>
-    </div>
-  </div>
-
-  <div class="container">
-    <div class="section">
-      </div>
-  </div>
-    </main>
-  <footer class="page-footer" style="background-color:#111921;">
-    <div class="footer-copyright" style="background-color:#111921;">
-      <div class="container">
-      Made by <a class="blue-grey-text text-lighten-1" href="http://markibrahim.me/">Mark Ibrahim</a>
-      </div>
-    </div>
-  </footer>
-
-
-  <!--  Scripts-->
-  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-  <script src="js/materialize.js"></script>
-  <script src="js/init.js"></script>
-
-
-
-  </body>
-</html>
+    
+  {% endblock %}
