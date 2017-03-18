@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+  <title>Vim Labs</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/custom.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+
+    <!-- ACE EDITOR -->
+<style type="text/css" media="screen">
+    .ace_editor {
+        position: relative !important;
+        margin: auto;
+        height: 500px;
+        width: 80%;
+        box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+
+    .ace_editor.fullScreen {
+        height: auto;
+        width: auto;
+        border: 0;
+        margin: 0;
+        position: fixed !important;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 10;
+    }
+
+    .fullScreen {
+        overflow: hidden
+    }
+
+    .scrollmargin {
+        height: 500px;
+        text-align: center;
+    }
+
+    .large-button {
+        color: lightblue;
+        cursor: pointer;
+        font: 30px arial;
+        padding: 20px;
+        text-align: center;
+        border: medium solid transparent;
+        display: inline-block;
+    }
+    .large-button:hover {
+        border: medium solid lightgray;
+        border-radius: 10px 10px 10px 10px;
+        box-shadow: 0 0 12px 0 lightblue;
+    }
+</style>
+</head>
+
+<body style="background-color: #1c2834;">
+    <main>
+  <nav style="background-color: #19242f;" role="navigation">
+    <div class="nav-wrapper container">
+        <a id="logo-container" href="#" class="brand-logo white-text"> 
+            <i class="material-icons">subtitles</i>Vim Labs
+        </a>
+
+      <ul class="right hide-on-med-and-down ">
+        <li><a href="landing.html#modules" class="blue-grey-text text-lighten-1">Learn Interactively</a></li>
+      </ul>
+
+      <ul id="nav-mobile" class="side-nav  cyan darken-4">
+        <li><a href="landing.html#modules" class="white-text text-darken-1">Learn Interactively</a></li>
+      </ul>
+      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+
+
+  <div class="container">
+    <div class="section">
+        <div class="row">
+        <div class="col s6 ">
+            <!-- TABS -->
+      <ul class="tabs tabs-transparent">
+          <li class="tab col s3"><a class="active" href="#step1">1: Motions</a></li>
+        <li class="tab col s3"><a href="#step2">2: Lines</a></li>
+        <li class="tab col s3"><a href="#step3">3: Hop</a></li>
+        <li class="tab col s3"><a href="#step4">4: Match</a></li>
+      </ul>
+
+            <!--- STEP 1 -->
+            <div id="step1">
+            <p class="flow-text right-align teal-text text-lighten-1">
+            try it
+            <i class="tiny material-icons">play_arrow </i>
+            </p>
+<p class="left-align blue-grey-text text-lighten-3">
+What to cover: motions f, F (review), t, T  + actions delete
+undo: u
+useful: f + space! (copy from module 1 3)
+<span class="red-text"><b> Actions</b></span> operating on 
+text <span class="green-text"><b> Objects</b></span>
+<br>
+<br>
+</p>
+<blockquote class="blue-grey-text">
+try typing
+'
+<span class="chip red">d</span>
++
+<span class="chip">a</span>
++
+<span class="chip green">w</span>
+'
+to delete the word under your cursor
+</blockquote>
+            </div>
+            <!--- STEP 1 END -->
+
+            <!--- STEP 2 -->
+            <div id="step2">
+<p class="left-align blue-grey-text text-lighten-3">
+Handy Actions:
+
+<br>
+&emsp;
+<span class="chip red">d</span>
+delete
+<br>
+&emsp;
+<span class="chip red">c</span>
+to change (deletes and puts you in insert mode)
+<br>
+&emsp;
+<span class="chip red">y</span>
+yank (vim lingo for copy)
+</p>
+<p class="left-align blue-grey-text text-lighten-3">
+These actions can operate
+<span class="chip">a</span>
+around
+or 
+<span class="chip">i</span>
+inside
+</p>
+<p class="left-align blue-grey-text text-lighten-3">
+Objects like a
+<span class="chip green">p</span>
+paragraph or
+<span class="chip green">s</span>
+sentence, but also
+<br>
+&emsp;
+<span class="chip green">"</span>
+quotes,
+<span class="chip green">(</span>
+and parenthesis.
+<br>
+<br>
+<blockquote class="blue-grey-text">
+try
+'
+<span class="chip red">d</span>
++
+<span class="chip">i</span>
++
+<span class="chip green">"</span>
+'
+inside the parenthesis in line 8. Ain't it magic?
+</blockquote>
+            </p>
+            </div>
+            <!--- STEP 2 END -->
+
+            <!--- STEP 3 -->
+<div id="step3">
+<p class="left-align blue-grey-text text-lighten-3">
+You just delete a word. Now type 
+<blockquote class="blue-grey-text">
+try
+'
+<span class="chip red">d</span>
++
+<span class="chip green">w</span>
+'
+at the start of line 13. 
+</blockquote>
+</p>
+<p class="left-align blue-grey-text text-lighten-3">
+You just delete a word. 
+<br>
+To repeat the last action, just type:
+<span class="chip">.</span>
+<br>
+<br>
+
+You can also run an action any number of times. Try adding 3 before deleting a word:
+<blockquote class="blue-grey-text">
+'
+<span class="chip red">3</span>
++
+<span class="chip red">d</span>
++
+<span class="chip green">w</span>
+'
+at the start of line 13. 
+</blockquote>
+</p>
+<p class="left-align blue-grey-text text-lighten-3">
+You can also repeat motions. Try moving to the next space:
+</p>
+<blockquote class="blue-grey-text">
+'
+<span class="chip yellow">f</span>
++
+<span class="chip green">space</span>
+'
+</blockquote>
+<p class="left-align blue-grey-text text-lighten-3">
+To repeat the motion, just type: 
+<span class="chip">;</span>
+</p>
+
+            </div>
+            <!--- STEP 3 END -->
+
+            <!--- STEP 4 -->
+<div id="step4">
+<p class="left-align blue-grey-text text-lighten-3">
+One common operation is changing text inside quotes. 
+</p>
+<blockquote class="blue-grey-text">
+    change the value of x on line 8:
+    <br>
+'
+<span class="chip red">c</span>
++
+<span class="chip">i</span>
++
+<span class="chip green">"</span>
+'
+</blockquote>
+
+<p class="left-align blue-grey-text text-lighten-3">
+You can do the same for [], (), and {}.
+<br>
+<br>
+In Vim you don't need to memorize many complex commands. 
+<br>
+Just learn a few useful actions and common objects. Then combining them is as natural as saying "delete inside brackets!
+
+<blockquote class="blue-grey-text">
+    <b>Challenge</b>: can you delete the useless paragraph in quotes in only three keystrokes?
+</blockquote>
+</p>
+
+
+</div>
+            <!--- STEP 4 END -->
+
+
+        </div>
+
+        <!--- EDITOR SETTINGS-->
+        <div class="col s6" id="editor">
+"""
+learn vim interactively
+"""
+
+
+def useless():
+    x = "delete me"
+    my_list = [thing1, thing2, thing3]
+    return None
+
+
+"""
+This is a useless paragraph. Full of
+mumbojumbo. Please delete 
+all of me, so I don't clutter 
+this workspace. 
+Can you do it with a single action on a object?
+"""
+
+
+next = "superpowers: actions + objects"
+
+
+        </div>
+        </div>
+    </div>
+  
+  </div>
+
+
+  
+  <div class="container">
+    <div class="section">
+      </div>
+  </div>
+    </main>
+  <footer class="page-footer" style="background-color:#111921;">
+    <div class="footer-copyright" style="background-color:#111921;">
+      <div class="container">
+      Made by <a class="blue-grey-text text-lighten-1" href="http://markibrahim.me/">Mark Ibrahim</a>
+      </div>
+    </div>
+  </footer>
+
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.6/ace.js"></script>
+<script>
+    var editor = ace.edit("editor");
+    editor.setTheme("ace/theme/clouds_midnight");
+    editor.getSession().setMode("ace/mode/python");
+    editor.setKeyboardHandler("ace/keyboard/vim");
+</script>
+
+<!-- Tabs -->
+<script>
+  $(document).ready(function(){
+          $('ul.tabs').tabs();
+            });
+        
+</script>
+
+
+  </body>
+</html>
