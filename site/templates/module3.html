@@ -1,4 +1,4 @@
-{% extends "module-skeleton.html" %}
+{% extends "_base-module.html" %}
 
 {% block steps %}
             <!-- TABS -->
@@ -11,85 +11,73 @@
 
             <!--- STEP 1 -->
             <div id="step1">
-            <p class="flow-text right-align teal-text text-lighten-1">
-            try it
-            <i class="tiny material-icons">play_arrow </i>
-            </p>
 <p class="left-align blue-grey-text text-lighten-3">
-What to cover: motions f, F (review), t, T  + actions delete
-undo: u
-useful: f + space! (copy from module 1 3)
-<span class="red-text"><b> Actions</b></span> operating on 
-text <span class="green-text"><b> Objects</b></span>
+Remember 
+<span class="chip">f + character</span>? 
+<br>
+<span class="chip">t</span>brings your cursor right before the character 
+<br>
+&emsp;
+<span class="chip">T</span> moves you backwards
 <br>
 <br>
+Amazingly, you use these motions with an action. 
+&emsp;
+<span class="chip">dt + character</span> deletes everything before the character!
 </p>
 <blockquote class="blue-grey-text">
-try typing
-'
-<span class="chip red">d</span>
-+
-<span class="chip">a</span>
-+
-<span class="chip green">w</span>
-'
-to delete the word under your cursor
+try deleting "thing2, thing3" on line 10 
+<br>
+using <span class="chip">t</span> 
+<br>
+(be sure to preserve the brackets)
 </blockquote>
+<p class="left-align blue-grey-text text-lighten-3">
+<br>
+Oops, we just realized 'thing2, and thing3' are really important. How can we ever get them back? Type 
+<span class="chip">u</span> to undo the last action.
+<br>
+<br>
+<b>Tip</b>:
+<span class="chip">f + space</span> moves to the next white space.
+</p>
             </div>
             <!--- STEP 1 END -->
 
             <!--- STEP 2 -->
             <div id="step2">
 <p class="left-align blue-grey-text text-lighten-3">
-Handy Actions:
-
+How can you add a new line?
 <br>
 &emsp;
-<span class="chip red">d</span>
-delete
+<span class="chip">o</span> adds a line below
 <br>
 &emsp;
-<span class="chip red">c</span>
-to change (deletes and puts you in insert mode)
+<span class="chip">O</span> adds a line above
+<br>
+<br>
+There are also efficient ways of working in a line:
 <br>
 &emsp;
-<span class="chip red">y</span>
-yank (vim lingo for copy)
+<span class="chip">$</span> moves to the end of a line
+<br>
+&emsp;
+<span class="chip">0</span> to the begining
+<br>
+<br>
+And you can edit a line at the start using
+<span class="chip">I</span>
+<br>
+&emsp;
+<span class="chip">A</span> to edit the end
 </p>
-<p class="left-align blue-grey-text text-lighten-3">
-These actions can operate
-<span class="chip">a</span>
-around
-or 
-<span class="chip">i</span>
-inside
-</p>
-<p class="left-align blue-grey-text text-lighten-3">
-Objects like a
-<span class="chip green">p</span>
-paragraph or
-<span class="chip green">s</span>
-sentence, but also
-<br>
-&emsp;
-<span class="chip green">"</span>
-quotes,
-<span class="chip green">(</span>
-and parenthesis.
-<br>
-<br>
 <blockquote class="blue-grey-text">
-try
-'
-<span class="chip red">d</span>
-+
-<span class="chip">i</span>
-+
-<span class="chip green">"</span>
-'
-inside the parenthesis in line 8. Ain't it magic?
+    give the sentence in line 9 a name using 
+<span class="chip">I</span>
 </blockquote>
-            </p>
+<p class="left-align blue-grey-text text-lighten-3">
+I hope you're begining to realize the power of motions!
+</p>
             </div>
             <!--- STEP 2 END -->
 
@@ -190,22 +178,25 @@ learn vim interactively
 """
 
 
-def useless():
-    x = "delete me"
+def move_faster():
+    u = "I'm a useful sentence."
+    = "I'm a useless sentence, without a name :<"
     my_list = [thing1, thing2, thing3]
     return None
 
 
 """
-This is a useless paragraph. Full of
-mumbojumbo. Please delete 
-all of me, so I don't clutter 
-this workspace. 
-Can you do it with a single action on a object?
+Navigating text in Vim is a fun game.
+With a single key, 
+you can jump to the end of a line or add a word 
+to the begining. 
+You can also combine motions with actions:
+delete everything up to the character 'd' 
+is a single command away!
 """
 
 
-next = "superpowers: actions + objects"
+next = "moving at the speed of light"
 
 
         </div>
