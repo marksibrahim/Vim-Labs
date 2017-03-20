@@ -22,6 +22,7 @@ Remember
 <br>
 <br>
 Amazingly, you use these motions with an action. 
+<br>
 &emsp;
 <span class="chip">dt + character</span> deletes everything before the character!
 </p>
@@ -50,7 +51,8 @@ Oops, we just realized 'thing2, and thing3' are really important. How can we eve
 How can you add a new line?
 <br>
 &emsp;
-<span class="chip">o</span> adds a line below
+<span class="chip">o</span> 
+adds a line below
 <br>
 &emsp;
 <span class="chip">O</span> adds a line above
@@ -65,11 +67,12 @@ There are also efficient ways of working in a line:
 <span class="chip">0</span> to the begining
 <br>
 <br>
-And you can edit a line at the start using
 <span class="chip">I</span>
+edit the begining of a line
 <br>
 &emsp;
-<span class="chip">A</span> to edit the end
+&emsp;
+ edit the end of a line <span class="chip">A</span>
 </p>
 <blockquote class="blue-grey-text">
     give the sentence in line 9 a name using 
@@ -84,50 +87,36 @@ I hope you're begining to realize the power of motions!
             <!--- STEP 3 -->
 <div id="step3">
 <p class="left-align blue-grey-text text-lighten-3">
-You just delete a word. Now type 
-<blockquote class="blue-grey-text">
-try
-'
-<span class="chip red">d</span>
-+
-<span class="chip green">w</span>
-'
-at the start of line 13. 
-</blockquote>
-</p>
-<p class="left-align blue-grey-text text-lighten-3">
-You just delete a word. 
+Say you neeed to add at the top of your file? 
 <br>
-To repeat the last action, just type:
-<span class="chip">.</span>
+&emsp;
+<span class="chip">gg</span>
+will place your cursor at the top
+<br>
+&emsp;
+<span class="chip">G</span>
+at the bottom
 <br>
 <br>
-
-You can also run an action any number of times. Try adding 3 before deleting a word:
+You can also jump around blocks of text or code
+<br>
+&emsp;
+<span class="chip">}</span>
+ jump to the next paragraph (blank line)
+<br>
+&emsp;
+<span class="chip">{</span>
+jump to the paragraph above
 <blockquote class="blue-grey-text">
-'
-<span class="chip red">3</span>
-+
-<span class="chip red">d</span>
-+
-<span class="chip green">w</span>
-'
-at the start of line 13. 
+    Try to:
+    <br>
+    1. jump to the first line
+    <br>
+    2. skip below the function to line 13 
+    <br>
+    in as few keystrokes as possible
+<span class="chip">I</span>
 </blockquote>
-</p>
-<p class="left-align blue-grey-text text-lighten-3">
-You can also repeat motions. Try moving to the next space:
-</p>
-<blockquote class="blue-grey-text">
-'
-<span class="chip yellow">f</span>
-+
-<span class="chip green">space</span>
-'
-</blockquote>
-<p class="left-align blue-grey-text text-lighten-3">
-To repeat the motion, just type: 
-<span class="chip">;</span>
 </p>
 
             </div>
@@ -136,34 +125,54 @@ To repeat the motion, just type:
             <!--- STEP 4 -->
 <div id="step4">
 <p class="left-align blue-grey-text text-lighten-3">
-One common operation is changing text inside quotes. 
+What if you jumped somewhere after making an edit?
+<br>
+&emsp;
+<span class="chip">' '</span>
+jump to the last edit
 </p>
 <blockquote class="blue-grey-text">
-    change the value of x on line 8:
+    Try to:
     <br>
-'
-<span class="chip red">c</span>
-+
-<span class="chip">i</span>
-+
-<span class="chip green">"</span>
-'
+    1. change "my" on line 11 to your name
+    <br>
+    2. jump to the last line
+    <br>
+    3. can you jump back to where you were?
+    <br>
 </blockquote>
-
 <p class="left-align blue-grey-text text-lighten-3">
-You can do the same for [], (), and {}.
+What if you wanted to match a bracket, parthensis, or quotes?
 <br>
-<br>
-In Vim you don't need to memorize many complex commands. 
-<br>
-Just learn a few useful actions and common objects. Then combining them is as natural as saying "delete inside brackets!
-
+&emsp;
+<span class="chip">%</span>
+matches the other pair over your cursor.
 <blockquote class="blue-grey-text">
-    <b>Challenge</b>: can you delete the useless paragraph in quotes in only three keystrokes?
+    Try to:
+    <br>
+    1. jump to the '{' on line 25
+    <br>
+    2. can you change the value of c from 0 to 1?
+    <br>
+    (in as few key strokes as possible)
 </blockquote>
 </p>
-
-
+<p class="left-align blue-grey-text text-lighten-3">
+&emsp;
+<span class="chip">*</span>
+reveals all the places the word over your cursor appears.
+<br>
+</p>
+<blockquote class="blue-grey-text">
+    Try to:
+    <br>
+    1. move to the word 'vim' on line 3
+    <br>
+    2. can you uncover all the places the word 'vim' appears?
+</blockquote>
+<p class="left-align blue-grey-text text-lighten-3">
+We'll learn all about the magic of searching shortly.
+</p>
 </div>
             <!--- STEP 4 END -->
             {% endblock %}
@@ -182,7 +191,8 @@ def move_faster():
     u = "I'm a useful sentence."
     = "I'm a useless sentence, without a name :<"
     my_list = [thing1, thing2, thing3]
-    return None
+    vim = "my favorite editor"
+    return vim
 
 
 """
@@ -195,6 +205,9 @@ delete everything up to the character 'd'
 is a single command away!
 """
 
+dictionary = {"a": 2, 
+              "b":3,
+              "c": 0}
 
 next = "moving at the speed of light"
 
