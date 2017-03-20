@@ -1,2 +1,2 @@
-web: cd site/ && python app.py
+web: cd site/ && gunicorn app:app
 
