@@ -1,7 +1,13 @@
 click==6.7
 Flask==0.12
-gunicorn==19.7.0
+Flask-Login==0.4.0
+Flask-SQLAlchemy==2.2
 itsdangerous==0.24
 Jinja2==2.9.5
 MarkupSafe==1.0
+rauth==0.7.3
+requests==2.13.0
+simplejson==3.10.0
+SQLAlchemy==1.1.6
+stripe==1.51.0
 Werkzeug==0.12.1
