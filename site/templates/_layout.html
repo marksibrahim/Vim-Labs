@@ -3,6 +3,9 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+  <meta name="google-signin-client_id" content="939082582563-i176fv0cjuta33p5r9g57v1kvmmu94be.apps.googleusercontent.com">
+
+
   <title>Vim Labs</title>
 
   <!-- CSS  -->
@@ -13,7 +16,6 @@
 
   <!-- favicon -->
   <link rel="shortcut icon" href="{{ url_for('static', filename='img/vim-labs.ico') }}" type="image/x-icon">
-
 </head>
 
 <body style="background-color: #1c2834;">
@@ -56,8 +58,8 @@
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="{{ url_for('static', filename='js/materialize.js') }}"></script>
   <script src="{{ url_for('static', filename='js/init.js') }}"></script>
-
-
+  <!-- Google OAuth-->
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
 
   </body>
 </html>

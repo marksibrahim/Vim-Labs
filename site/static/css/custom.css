@@ -12,3 +12,12 @@ main {
 
 /* End Sticky Footer */
 
+/* Google Sign-in*/
+#g-sign-btn{
+    padding-top: 1.5em;
+}
+
+.my-hover:hover {
+    opacity: 0.8;
+}
+

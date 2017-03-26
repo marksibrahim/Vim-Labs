@@ -17,7 +17,7 @@
 
 {% block page_content %}
         <div class="row center">
-            <a href="{{ url_for('module', number=1) }}" id="Get Started" class="btn-large waves-effect waves-light  indigo accent-2">Start
+            <a href="{{ url_for('module', number=1) }}" id="Get Started" class="btn-large waves-effect waves-light my-hover indigo accent-2">Start
               <i class="material-icons right">play_arrow
               </i>
           </a>
@@ -25,7 +25,11 @@
             <h2>Hi, {{ current_user.nickname }}!</h2>
             <p><a href="{{ url_for('logout') }}">Logout</a></p>
         {% else %}
-            <p><a href="{{ url_for('oauth_authorize', provider='google') }}">Login with Google</a></p>
+        <div class="row center" >
+            <a href="{{ url_for('oauth_authorize', provider='google') }}">
+                <img id="g-sign-btn" class="my-hover" src="{{ url_for('static', filename='img/btn_google_signin_dark_normal_web.png') }}">
+            </a>
+        </div>
         {% endif %}
         </div>
         <div class="row" id="modules">
