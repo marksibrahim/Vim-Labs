@@ -19,7 +19,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite'
 app.config['OAUTH_CREDENTIALS'] = {
     'google': {
         'id': '939082582563-8vivf9l29b3m1dqefam9cf64fhrdtus9.apps.googleusercontent.com',
-        'secret': os.environ['G-SECRET']
+        'secret': os.environ['G_SECRET']
     },
 }
 
