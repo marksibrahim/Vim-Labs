@@ -2,6 +2,7 @@
 runs flask app
 """
 
+import os
 import stripe
 from flask import Flask
 from flask import render_template, request, redirect, url_for, flash
@@ -17,8 +18,8 @@ app.config['SECRET_KEY'] = 'top secret!'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite'
 app.config['OAUTH_CREDENTIALS'] = {
     'google': {
-        'id': '939082582563-i176fv0cjuta33p5r9g57v1kvmmu94be.apps.googleusercontent.com',
-        'secret': 'u-_wfneVvcOpjX_iP5yR3GFS'
+        'id': '939082582563-8vivf9l29b3m1dqefam9cf64fhrdtus9.apps.googleusercontent.com',
+        'secret': os.environ['G-SECRET']
     },
 }
 
@@ -39,14 +40,17 @@ class User(UserMixin, db.Model):
     # defaults to true; change this behavior once live
     paid = db.Column(db.Boolean)
 
+
 @app.route('/')
 @app.route("/landing.html/")
 def landing():
     return render_template("landing.html")
 
+
 @app.route('/modules/<number>')
 def module(number):
     return render_template('module'+ number +'.html')
+
 
 @app.route('/premium/<number>')
 @login_required
