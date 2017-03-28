@@ -1,10 +1,5 @@
 """
 runs flask app
-TODO
-try using
-https://github.com/lepture/flask-oauthlib/blob/master/example/google.py
-and protecting views using
-http://stackoverflow.com/questions/9499286/using-google-oauth2-with-flask
 """
 
 import stripe
@@ -56,32 +51,37 @@ def module(number):
 @app.route('/premium/<number>')
 @login_required
 def private_module(number):
-    print("private")
-    return render_template('p_module' + number)
+    print("premium" + number)
+    if not current_user.paid:
+        redirect(url_for('charge'))
+    return render_template('p_module' + number + '.html')
 
 
 @app.route('/charge')
+@login_required
 def charge():
     return render_template('charge.html', key=stripe_publishable_key)
 
 
 @app.route('/paid', methods=['POST'])
+@login_required
 def paid():
     # Amount in cents
     amount = 500
-
     customer = stripe.Customer.create(
         email='customer@example.com',
         source=request.form['stripeToken']
     )
-
     charge = stripe.Charge.create(
         customer=customer.id,
         amount=amount,
         currency='usd',
         description='Flask Charge'
     )
-
+    # mark user as paid
+    current_user.paid = True
+    db.session.add(current_user)
+    db.session.commit()
     return render_template('paid.html', amount=amount)
 
 
@@ -118,10 +118,14 @@ def oauth_callback(provider):
         return redirect(url_for('login'))
     user = User.query.filter_by(social_id=social_id).first()
     if not user:
-        user = User(social_id=social_id, nickname=username, email=email)
+        user = User(social_id=social_id, nickname=username, email=email, paid=False)
         db.session.add(user)
         db.session.commit()
     login_user(user, True)
+    # if not paid, route to payment
+    if not user.paid:
+        print("redirecting to stripe charge")
+        return redirect(url_for('charge'))
     return redirect(url_for('landing'))
 
 if __name__ == "__main__":
