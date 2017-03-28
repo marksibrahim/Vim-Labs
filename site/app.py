@@ -11,6 +11,8 @@ from flask_login import LoginManager, UserMixin, login_user, logout_user,\
     current_user, login_required
 from oauth import OAuthSignIn
 
+print(os.environ)
+
 app = Flask(__name__)
 app.config['DEBUG'] = True
 app.config['TEMPLATES_AUTO_RELOAD'] = True
