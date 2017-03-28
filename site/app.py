@@ -12,7 +12,7 @@ from flask import Flask
 from flask import render_template, request, redirect, url_for, flash
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager, UserMixin, login_user, logout_user,\
-    current_user
+    current_user, login_required
 from oauth import OAuthSignIn
 
 app = Flask(__name__)
@@ -30,7 +30,7 @@ app.config['OAUTH_CREDENTIALS'] = {
 
 db = SQLAlchemy(app)
 lm = LoginManager(app)
-lm.login_view = 'landing'
+lm.login_view = 'login'
 
 stripe_publishable_key = "pk_test_Wypi43lE9wNRG6zE8FC6Rbcz"
 stripe.api_key = "sk_test_n1uEkuppBSnsH0pI3J6M17V0"
@@ -41,6 +41,8 @@ class User(UserMixin, db.Model):
     social_id = db.Column(db.String(64), nullable=False, unique=True)
     nickname = db.Column(db.String(64), nullable=False)
     email = db.Column(db.String(64), nullable=True)
+    # defaults to true; change this behavior once live
+    paid = db.Column(db.Boolean)
 
 @app.route('/')
 @app.route("/landing.html/")
@@ -52,6 +54,7 @@ def module(number):
     return render_template('module'+ number +'.html')
 
 @app.route('/premium/<number>')
+@login_required
 def private_module(number):
     print("private")
     return render_template('p_module' + number)
@@ -60,6 +63,7 @@ def private_module(number):
 @app.route('/charge')
 def charge():
     return render_template('charge.html', key=stripe_publishable_key)
+
 
 @app.route('/paid', methods=['POST'])
 def paid():
@@ -91,11 +95,14 @@ def logout():
     logout_user()
     return redirect(url_for('landing'))
 
+@app.route('/login')
+def login():
+    return render_template('login.html')
 
 @app.route('/authorize/<provider>')
 def oauth_authorize(provider):
     if not current_user.is_anonymous:
-        return redirect(url_for('landing'))
+        return redirect(url_for('login'))
     oauth = OAuthSignIn.get_provider(provider)
     return oauth.authorize()
 
@@ -103,12 +110,12 @@ def oauth_authorize(provider):
 @app.route('/callback/<provider>')
 def oauth_callback(provider):
     if not current_user.is_anonymous:
-        return redirect(url_for('landing'))
+        return redirect(url_for('login'))
     oauth = OAuthSignIn.get_provider(provider)
     social_id, username, email = oauth.callback()
     if social_id is None:
         flash('Authentication failed.')
-        return redirect(url_for('landing'))
+        return redirect(url_for('login'))
     user = User.query.filter_by(social_id=social_id).first()
     if not user:
         user = User(social_id=social_id, nickname=username, email=email)

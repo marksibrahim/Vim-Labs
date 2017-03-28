@@ -37,6 +37,83 @@
   <div class="container">
       {% block page_content %}
       {% endblock %}
+        <div class="row" id="modules">
+        <div class="divider"></div>
+        <div class="col s12 center">
+
+          <h3><i class="mdi-content-send"></i></h3>
+          <h4 class=" blue-grey-text text-lighten-4">
+              <i class="material-icons">aspect_ratio</i>
+              <br/>
+              Modules
+          </h4>
+          <h6></h6>
+      <div class="row">
+        <div class="col s12 m4">
+          <div class="card small blue-grey darken-2 z-depth-5">
+            <div class="card-content blue-grey-text text-lighten-5">
+              <span class="card-title">Basic Editing</span>
+              <hr>
+              <p>Learn to how to type text, navigate a file, and appreciate Vim's modes.
+              <br></p>
+            </div>
+            <div class="card-action">
+                <a href="{{ url_for('module', number=1) }}">Learn Now
+              <i class="material-icons right">play_arrow
+              </i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col s12 m4">
+          <div class="card small blue-grey darken-2 z-depth-5">
+            <div class="card-content blue-grey-text text-lighten-5">
+              <span class="card-title"> Actions + Objects</span>
+              <hr>
+              <p>Learn Vim's elegant syntax for editing text. </p>
+            </div>
+            <div class="card-action">
+              <a href="{{ url_for('module', number=2) }}">Learn Now
+              <i class="material-icons right">play_arrow
+              </i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col s12 m4">
+          <div class="card small blue-grey darken-2 z-depth-5">
+            <div class="card-content blue-grey-text text-lighten-5">
+              <span class="card-title">Moving Fast</span>
+              <hr>
+              <p>Learn how to move efficiently within a file.</p>
+            </div>
+            <div class="card-action">
+              <a href="{{ url_for('module', number=3) }}">Learn Now
+              <i class="material-icons right">play_arrow
+              </i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col s12 m4">
+          <div class="card small blue-grey darken-2 z-depth-5">
+            <div class="card-content blue-grey-text text-lighten-5">
+              <span class="card-title">Premium 1</span>
+              <hr>
+              <p>Learn how to move efficiently within a file.</p>
+            </div>
+            <div class="card-action">
+              <a href="{{ url_for('private_module', number=4) }}">Learn Now
+              <i class="material-icons right">play_arrow
+              </i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+        </div>
+      </div>
     <div class="section"></div>
   </div>
 
