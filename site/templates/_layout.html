@@ -25,9 +25,15 @@
         <a id="logo-container" href="#" class="brand-logo white-text"> 
             <i class="material-icons">subtitles</i>Vim Labs
         </a>
+         <ul class="right hide-on-med-and-down ">
+        {% if current_user.is_authenticated %}
+            <li>Hi, {{ current_user.nickname }}!</li>
+            <li><a href="{{ url_for('logout') }}">Logout</a></li>
+        {% else %}
+        {% endif %}
+      </ul>
     </div>
   </nav>
-
 
   <div class="container">
       {% block top_block %}

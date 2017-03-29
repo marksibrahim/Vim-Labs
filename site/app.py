@@ -74,23 +74,22 @@ def charge():
 @app.route('/paid', methods=['POST'])
 @login_required
 def paid():
-    # Amount in cents
-    amount = 500
-    customer = stripe.Customer.create(
-        email='customer@example.com',
-        source=request.form['stripeToken']
-    )
+    # Token is created using Stripe.js or Checkout!
+    # Get the payment token submitted by the form:
+    token = request.form['stripeToken'] # Using Flask
+
+    # Charge the user's card:
     charge = stripe.Charge.create(
-        customer=customer.id,
-        amount=amount,
-        currency='usd',
-        description='Flask Charge'
+      amount=1500,# Amount in cents
+      currency="usd",
+      description="Vim Labs Premium",
+      source=token,
     )
     # mark user as paid
     current_user.paid = True
     db.session.add(current_user)
     db.session.commit()
-    return render_template('paid.html', amount=amount)
+    return render_template('login.html')
 
 
 @lm.user_loader

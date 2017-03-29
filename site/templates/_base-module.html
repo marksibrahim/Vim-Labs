@@ -73,7 +73,12 @@
         </a>
 
       <ul class="right hide-on-med-and-down ">
+        {% if current_user.is_authenticated %}
+            <li>Hi, {{ current_user.nickname }}!</li>
+            <li><a href="{{ url_for('logout') }}">Logout</a></li>
+        {% else %}
         <li><a href="{{ url_for('landing') }}" class="blue-grey-text text-lighten-1">Learn Interactively</a></li>
+        {% endif %}
       </ul>
 
       <ul id="nav-mobile" class="side-nav  cyan darken-4">
