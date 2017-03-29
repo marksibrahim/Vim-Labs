@@ -35,6 +35,9 @@ lm.login_view = 'login'
 stripe_publishable_key = "pk_test_Wypi43lE9wNRG6zE8FC6Rbcz"
 stripe.api_key = "sk_test_n1uEkuppBSnsH0pI3J6M17V0"
 
+# for Vim Labs Premium 
+amount = 1500
+
 class User(UserMixin, db.Model):
     __tablename__ = 'users'
     id = db.Column(db.Integer, primary_key=True)
@@ -68,7 +71,7 @@ def private_module(number):
 @app.route('/charge')
 @login_required
 def charge():
-    return render_template('charge.html', key=stripe_publishable_key)
+    return render_template('charge.html', key=stripe_publishable_key, dollar_amount=int(amount/100))
 
 
 @app.route('/paid', methods=['POST'])
@@ -80,7 +83,7 @@ def paid():
 
     # Charge the user's card:
     charge = stripe.Charge.create(
-      amount=1500,# Amount in cents
+      amount=amount,# Amount in cents
       currency="usd",
       description="Vim Labs Premium",
       source=token,

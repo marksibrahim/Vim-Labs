@@ -1,5 +1,3 @@
-var stripe = Stripe('pk_test_Wypi43lE9wNRG6zE8FC6Rbcz');
-var elements = stripe.elements();
 
 var card = elements.create('card', {
   iconStyle: 'solid',

@@ -15,7 +15,7 @@
     <div id="card-element" class="field is-empty"></div>
     <span><span>Card</span></span>
   </label>
-  <button type="submit">Pay $25</button>
+  <button type="submit">Pay ${{ dollar_amount }}</button>
   <div class="outcome">
     <div class="error"></div>
     <div class="success">
@@ -24,6 +24,12 @@
   </div>
 </form>
 </div>
+
+<script>
+// pass public stripe key into form
+var stripe = Stripe('{{ key }}');
+var elements = stripe.elements();
+</script>
 
 <script src="{{ url_for('static', filename='js/custom-stripe.js') }}">
 </script>
