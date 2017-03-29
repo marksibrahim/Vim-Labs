@@ -16,8 +16,10 @@ print(os.environ)
 app = Flask(__name__)
 app.config['DEBUG'] = True
 app.config['TEMPLATES_AUTO_RELOAD'] = True
-app.config['SECRET_KEY'] = 'top secret!'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite'
+# secret key is used for encryption
+app.config['SECRET_KEY'] = os.environ['SECRET_KEY']
+# when running locally, you may to occassionaly update when secret is rotated
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ["DATABASE_URL"]
 app.config['OAUTH_CREDENTIALS'] = {
     'google': {
         'id': '939082582563-8vivf9l29b3m1dqefam9cf64fhrdtus9.apps.googleusercontent.com',
