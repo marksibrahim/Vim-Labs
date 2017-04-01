@@ -56,6 +56,7 @@
           <h6></h6>
       <div class="row">
         <div class="col s12 m4">
+              <a href="{{ url_for('module', number=1) }}">
           <div class="card small blue-grey darken-2 z-depth-5">
             <div class="card-content blue-grey-text text-lighten-5">
               <span class="card-title">Basic Editing</span>
@@ -70,8 +71,10 @@
               </a>
             </div>
           </div>
+              </a>
         </div>
         <div class="col s12 m4">
+              <a href="{{ url_for('module', number=2) }}">
           <div class="card small blue-grey darken-2 z-depth-5">
             <div class="card-content blue-grey-text text-lighten-5">
               <span class="card-title"> Actions + Objects</span>
@@ -85,8 +88,10 @@
               </a>
             </div>
           </div>
+              </a>
         </div>
         <div class="col s12 m4">
+              <a href="{{ url_for('module', number=3) }}">
           <div class="card small blue-grey darken-2 z-depth-5">
             <div class="card-content blue-grey-text text-lighten-5">
               <span class="card-title">Moving Fast</span>
@@ -100,11 +105,21 @@
               </a>
             </div>
           </div>
+              </a>
         </div>
         <div class="col s12 m4">
-          <div class="card small blue-grey darken-2 z-depth-5">
+              <a href="{{ url_for('private_module', number=4) }}">
+          <div class="card small card-hover blue-grey darken-2 z-depth-5">
             <div class="card-content blue-grey-text text-lighten-5">
-              <span class="card-title">Premium 1</span>
+              <span class="card-title">
+                  Premium 2
+              </span>
+                <p class="yellow-text  text-accent-2 right" style="font-size: 10px;">
+                <i class="material-icons">
+                    redeem
+                </i>
+                premium
+                </p>
               <hr>
               <p>Learn how to move efficiently within a file.</p>
             </div>
@@ -115,6 +130,7 @@
               </a>
             </div>
           </div>
+            </a>
         </div>
       </div>
 
