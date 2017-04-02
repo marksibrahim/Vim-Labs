@@ -1,0 +1,131 @@
+{% extends "_base-module.html" %}
+
+{% block steps %}
+            <!-- TABS -->
+      <ul class="tabs tabs-transparent">
+          <li class="tab col s3"><a class="active" href="#step1">1:Visual</a></li>
+        <li class="tab col s3"><a href="#step2">2: Copy</a></li>
+        <li class="tab col s3"><a href="#step3">3: Repeat</a></li>
+        <li class="tab col s3"><a href="#step4">4: Search</a></li>
+      </ul>
+
+            <!--- STEP 1 -->
+            <div id="step1">
+<p class="left-align blue-grey-text text-lighten-3">
+Visual mode highlights text before you operate on it. It's a great way to make sure you're deleting or copying the right thing. 
+
+To start Visual Mode type 'v'. You can then apply any of the motions we learned about. For example }, will  highlight the rest of the paragraph. You can also use j, k, l.
+
+If want to operate on more complex blocks, activate Visual Block Mode: 
+V then any motion. You can use j, k, l to highlight any blocks of text, even if they don't lie on the same line. This is super handy if you say want to insert some text at the begining of multiple lines. 
+> try selecting a few lines and add a #. Then add ( to close the parenthesis.
+
+Capital A, will append to the end of a line
+</p>
+
+</div>
+            <!--- STEP 1 END -->
+
+            <!--- STEP 2 -->
+            <div id="step2">
+<p class="left-align blue-grey-text text-lighten-3">
+Vim provides clever copy and paste commands that can operate on objects. We can also combine copy and paste with visual selection. 
+
+Try copying a paragraph using visual mode to confirm you selected the right text. 
+
+You can also quickly copy lines using yy
+You can apply a similar trick to delete a line: dd
+
+To paste there are two variants: p pastes below and P pastes above. 
+
+Once, you delete a piece of text, it's autmatically added to your clipboard. So after deleting a word or a paragraph you can paste it elsewhere by simply typing p!
+
+
+</p>
+        </div>
+            <!--- STEP 2 END -->
+
+            <!--- STEP 3 -->
+<div id="step3">
+<p class="left-align blue-grey-text text-lighten-3">
+Vim remains a powerful editor today, because of it's natural syntax. Actions operate on objects. This allows us to repeat an action any number of times.
+Try copying a sentence rember how? (yy) 
+Instead of pasting once, type 3p.
+
+Try applying the same idea to a motion. 
+Try going down 10 lines? You could press j ten times or you can type 10j!
+
+Finally, if you want to undo not only the last edit, but the last 2. What do you do? 2u!
+</p>
+</div>
+            <!--- STEP 3 END -->
+
+            <!--- STEP 4 -->
+<div id="step4">
+<p class="left-align blue-grey-text text-lighten-3">
+How do you search for a word in Vim? It's easy! Just type
+\a word
+To navigate to the next instance, type n (N to go backwards).
+
+Vim shines because by default, you can search not just for words verbatum, but also patterns. Let's search for all words with v_m where _ can be any character:
+\v.m
+
+Find this or that:
+\this\|that
+
+For more regex see here...
+
+One other really neat trick is *, searches for the word under teh cursor, so you dont' have to type it!
+
+</p>
+</div>
+            <!--- STEP 4 END -->
+            {% endblock %}
+
+            {% block editor_text %}
+
+
+        <!--- EDITOR SETTINGS-->
+        <div class="col s6" id="editor">
+"""
+learn vim interactively
+"""
+
+I'm a comment)
+I'm another comment)
+We're missing '#', so our program won't run)
+Will you add it?)
+
+
+def super_powers():
+    u = "I'm a useful sentence."
+    = "I'm a useless sentence, without a name :<"
+    my_list = [thing1, thing2, thing3]
+    vim = "my favorite editor"
+    return vim
+
+
+"""
+Navigating text in Vim is a fun game.
+With a single key, 
+you can jump to the end of a line or add a word 
+to the begining. 
+You can also combine motions with actions:
+delete everything up to the character 'd' 
+is a single command away!
+"""
+
+dictionary = {"a": 2, 
+              "b":3,
+              "c": 0}
+
+next = "moving at the speed of light"
+
+
+        </div>
+        </div>
+    </div>
+  
+  </div>
+  {% endblock %}
+

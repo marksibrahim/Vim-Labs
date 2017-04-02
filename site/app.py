@@ -11,15 +11,15 @@ from flask_login import LoginManager, UserMixin, login_user, logout_user,\
     current_user, login_required
 from oauth import OAuthSignIn
 
-print(os.environ)
 
 app = Flask(__name__)
-app.config['DEBUG'] = True
+app.config['DEBUG'] = False
 app.config['TEMPLATES_AUTO_RELOAD'] = True
 # secret key is used for encryption
 app.config['SECRET_KEY'] = os.environ['SECRET_KEY']
 # when running locally, you may to occassionaly update when secret is rotated
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ["DATABASE_URL"]
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['OAUTH_CREDENTIALS'] = {
     'google': {
         'id': '939082582563-8vivf9l29b3m1dqefam9cf64fhrdtus9.apps.googleusercontent.com',
@@ -140,4 +140,4 @@ def oauth_callback(provider):
 
 if __name__ == "__main__":
     db.create_all()
-    app.run(debug=True)
+    app.run()
