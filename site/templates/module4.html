@@ -3,7 +3,7 @@
 {% block steps %}
             <!-- TABS -->
       <ul class="tabs tabs-transparent">
-          <li class="tab col s3"><a class="active" href="#step1">1:Visual</a></li>
+          <li class="tab col s3"><a class="active" href="#step1">1: Visual</a></li>
         <li class="tab col s3"><a href="#step2">2: Copy</a></li>
         <li class="tab col s3"><a href="#step3">3: Repeat</a></li>
         <li class="tab col s3"><a href="#step4">4: Search</a></li>
@@ -13,15 +13,37 @@
             <div id="step1">
 <p class="left-align blue-grey-text text-lighten-3">
 Visual mode highlights text before you operate on it. It's a great way to make sure you're deleting or copying the right thing. 
-
-To start Visual Mode type 'v'. You can then apply any of the motions we learned about. For example }, will  highlight the rest of the paragraph. You can also use j, k, l.
-
-If want to operate on more complex blocks, activate Visual Block Mode: 
-V then any motion. You can use j, k, l to highlight any blocks of text, even if they don't lie on the same line. This is super handy if you say want to insert some text at the begining of multiple lines. 
-> try selecting a few lines and add a #. Then add ( to close the parenthesis.
-
-Capital A, will append to the end of a line
+<br>
+<br>
+<span class="chip">v</span> starts Visual Mode. Now, apply any motion to select text.
+<br>
 </p>
+
+<blockquote class="blue-grey-text">
+Try
+<span class="chip">v + }</span> to grab a paragraph.
+</blockquote>
+
+<p class="left-align blue-grey-text text-lighten-3">
+<span class="chip">w</span> is useful for grabbing a word as is 
+selecting up to a character <span class="chip">f + character</span>
+<br>
+<br>
+For more complex selections, activate Visual Block Mode: 
+<br>
+<span class="chip">V</span>
++ any motion. You can use j, k, l to highlight blocks of text. 
+<br>
+So what? You can, for example, insert text at the begining of many lines all at once! 
+</p>
+<blockquote class="blue-grey-text">
+try selecting the first character on lines 6-9: 
+<br>
+<span class="chip">V + j</span>
+then 
+<span class="chip">I</span>
+and ')'. Once you escape to Normal mode, text will appear on all lines!
+</blockquote>
 
 </div>
             <!--- STEP 1 END -->
@@ -29,29 +51,54 @@ Capital A, will append to the end of a line
             <!--- STEP 2 -->
             <div id="step2">
 <p class="left-align blue-grey-text text-lighten-3">
-Vim provides clever copy and paste commands that can operate on objects. We can also combine copy and paste with visual selection. 
-
-Try copying a paragraph using visual mode to confirm you selected the right text. 
-
-You can also quickly copy lines using yy
-You can apply a similar trick to delete a line: dd
-
-To paste there are two variants: p pastes below and P pastes above. 
-
-Once, you delete a piece of text, it's autmatically added to your clipboard. So after deleting a word or a paragraph you can paste it elsewhere by simply typing p!
-
-
+Visual selection is useful for copying. 
 </p>
+<blockquote class="blue-grey-text">
+Try visually selecting a paragraph: 
+<span class="chip">v + }</span>
+then copy (yank) using: 
+<span class="chip">y</span>.
+</blockquote>
+
+<p class="left-align blue-grey-text text-lighten-3">
+<span class="chip">p</span> pastes the selection. (
+<span class="chip">P</span> pastes above)
+<br>
+You can also quickly copy lines using 
+<span class="chip">yy</span>
+<br>
+You can apply a similar trick to delete a line: 
+<span class="chip">dd</span>
+<br>
+
+Once you delete a piece of text, it's automatically added to your clipboard. So after deleting a word or paragraph you can paste it elsewhere by simply typing 
+<span class="chip">p</span>!
+<br>
+</p>
+<blockquote class="blue-grey-text">
+Try copying then pasting a word:
+<span class="chip">yaw</span>
+then 
+<span class="chip">p</span>.
+</blockquote>
         </div>
             <!--- STEP 2 END -->
 
             <!--- STEP 3 -->
 <div id="step3">
 <p class="left-align blue-grey-text text-lighten-3">
-Vim remains a powerful editor today, because of it's natural syntax. Actions operate on objects. This allows us to repeat an action any number of times.
-Try copying a sentence rember how? (yy) 
-Instead of pasting once, type 3p.
+With actions operating on objects, comes the power to repeat.
+Type a number before an action to repeat it.
+</p>
+<blockquote class="blue-grey-text">
+Try copying a sentence. Remember how?
+(<span class="chip">yy</span>)
+<br>
+Instead of pasting once, type
+<span class="chip">3p</span>.
+</blockquote>
 
+<p class="left-align blue-grey-text text-lighten-3">
 Try applying the same idea to a motion. 
 Try going down 10 lines? You could press j ten times or you can type 10j!
 
@@ -120,6 +167,8 @@ dictionary = {"a": 2,
               "c": 0}
 
 next = "moving at the speed of light"
+
+
 
 
         </div>
