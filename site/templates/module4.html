@@ -94,15 +94,18 @@ Type a number before an action to repeat it.
 Try copying a sentence. Remember how?
 (<span class="chip">yy</span>)
 <br>
-Instead of pasting once, type
+Next paste 3 times
 <span class="chip">3p</span>.
 </blockquote>
 
 <p class="left-align blue-grey-text text-lighten-3">
 Try applying the same idea to a motion. 
-Try going down 10 lines? You could press j ten times or you can type 10j!
-
-Finally, if you want to undo not only the last edit, but the last 2. What do you do? 2u!
+<br>
+Try moving down 10 lines. Instead of pressing jjjjjj (10 times), just type 
+<span class="chip">10j</span>
+<br>
+Repitition can be applied everywhere, even with undo. Make two changes. To undo both try
+<span class="chip">2u</span>
 </p>
 </div>
             <!--- STEP 3 END -->
@@ -110,20 +113,42 @@ Finally, if you want to undo not only the last edit, but the last 2. What do you
             <!--- STEP 4 -->
 <div id="step4">
 <p class="left-align blue-grey-text text-lighten-3">
-How do you search for a word in Vim? It's easy! Just type
-\a word
-To navigate to the next instance, type n (N to go backwards).
+How do you search for a word in Vim? It's easy! 
+<br>
+type
+<span class="chip">\</span>
+to activate search. Type any word to search.
+<br>
+&emsp;
+<span class="chip">n</span> navigates to the next occurence
+<br>
+&emsp;
+<span class="chip">N</span> to the previous
+<br>
 
-Vim shines because by default, you can search not just for words verbatum, but also patterns. Let's search for all words with v_m where _ can be any character:
-\v.m
+Vim search shines, because it accepts search patterns by default&mdash;not just words. 
+<br>
+</p>
+<blockquote class="blue-grey-text">
+Let's search for all words begining with 'vi':
+<span class="chip">\vi.</span>
+</blockquote>
 
-Find this or that:
-\this\|that
-
-For more regex see here...
-
-One other really neat trick is *, searches for the word under teh cursor, so you dont' have to type it!
-
+<p class="left-align blue-grey-text text-lighten-3">
+<span class="chip">.</span>
+in a search pattern matches any character
+<br>
+Find this or that using 
+<span class="chip">\this\|that</span>
+<br>
+The "\" above is an escape character which takes away any meaning a special character carries.
+<br>
+<br>
+If you want to learn more about regex pattern search see here.
+<br>
+Another neat trick is 
+<br>
+<span class="chip">*</span> searches the word under the cursor automatically!
 </p>
 </div>
             <!--- STEP 4 END -->
