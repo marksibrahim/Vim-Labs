@@ -58,6 +58,9 @@ def landing():
 def module(number):
     return render_template('module'+ number +'.html')
 
+@app.route('/practice/<number>')
+def practice(number):
+    return render_template('practice'+ number +'.html')
 
 @app.route('/premium/<number>')
 @login_required

@@ -1,0 +1,84 @@
+{% extends "_base-module.html" %}
+
+{% block steps %}
+
+            <!--- STEP 1 -->
+<div id="step1">
+<p class="left-align blue-grey-text text-lighten-3">
+Remember 
+<span class="chip">f + character</span>? 
+<br>
+<span class="chip">t</span>brings your cursor right before the character 
+<br>
+&emsp;
+<span class="chip">T</span> moves you backwards
+<br>
+<br>
+Amazingly, you use these motions with an action. 
+<br>
+&emsp;
+<span class="chip">dt + character</span> deletes everything before the character!
+</p>
+<blockquote class="blue-grey-text">
+try deleting "thing2, thing3" on line 10 
+<br>
+using <span class="chip">t</span> 
+<br>
+(be sure to preserve the brackets)
+</blockquote>
+<p class="left-align blue-grey-text text-lighten-3">
+<br>
+Oops, we just realized 'thing2, and thing3' are really important. How can we ever get them back? Type 
+<span class="chip">u</span> to undo the last action.
+<br>
+<br>
+<b>Tip</b>:
+<span class="chip">f + space</span> moves to the next white space.
+</p>
+            </div>
+            <!--- STEP 1 END -->
+
+            {% endblock %}
+
+            {% block editor_text %}
+
+
+        <!--- EDITOR SETTINGS-->
+        <div class="col s6" id="editor">
+"""
+learn vim interactively
+"""
+
+
+def move_faster():
+    u = "I'm a useful sentence."
+    = "I'm a useless sentence, without a name :<"
+    my_list = [thing1, thing2, thing3]
+    vim = "my favorite editor"
+    return vim
+
+
+"""
+Navigating text in Vim is a fun game.
+With a single key, 
+you can jump to the end of a line or add a word 
+to the begining. 
+You can also combine motions with actions:
+delete everything up to the character 'd' 
+is a single command away!
+"""
+
+dictionary = {"a": 2, 
+              "b":3,
+              "c": 0}
+
+next = "moving at the speed of light"
+
+
+        </div>
+        </div>
+    </div>
+  
+  </div>
+  {% endblock %}
+

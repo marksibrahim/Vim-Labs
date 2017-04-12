@@ -54,6 +54,7 @@
               Modules
           </h4>
           <h6></h6>
+
       <div class="row">
         <div class="col s12 m4">
               <a href="{{ url_for('module', number=1) }}">
@@ -72,7 +73,9 @@
             </div>
           </div>
               </a>
+              <a href="{{ url_for('practice', number=1) }}" class="waves-effect waves-light btn green accent-4 z-depth-5"><i class="material-icons left">settings_input_hdmi</i>practice</a>
         </div>
+
         <div class="col s12 m4">
               <a href="{{ url_for('module', number=2) }}">
           <div class="card small darken-2 z-depth-5">
@@ -89,6 +92,7 @@
             </div>
           </div>
               </a>
+              <a class="waves-effect waves-light btn green accent-4 z-depth-5"><i class="material-icons left">settings_input_hdmi</i>practice</a>
         </div>
         <div class="col s12 m4">
               <a href="{{ url_for('module', number=3) }}">
@@ -106,19 +110,31 @@
             </div>
           </div>
               </a>
+              <a class="waves-effect waves-light btn green accent-4 z-depth-5"><i class="material-icons left">settings_input_hdmi</i>practice</a>
         </div>
+        </div>
+
+      <div class="row">
+          <br>
+          <br>
         <div class="col s12 m4">
-              <a href="{{ url_for('module', number=4) }}">
+              <a href="{{ url_for('private_module', number=4) }}">
           <div class="card small card-hover  darken-2 z-depth-5">
             <div class="card-content ">
               <span class="card-title">
                   Super Powers
+                <p class="yellow-text  text-accent-2 right" style="font-size: 10px;">
+                <i class="material-icons">
+                    card_membership
+                </i>
+                pro
+                </p>
               </span>
               <hr>
               <p>Gain super powers for manipualting text visually, inserting the same text on multiple lines, and repeating the same action over and over without additional work!</p>
             </div>
             <div class="card-action">
-              <a href="{{ url_for('module', number=4) }}">Learn Now
+              <a href="{{ url_for('private_module', number=4) }}">Learn Now
               <i class="material-icons right">play_arrow
               </i>
               </a>
@@ -135,12 +151,39 @@
               </span>
                 <p class="yellow-text  text-accent-2 right" style="font-size: 10px;">
                 <i class="material-icons">
-                    redeem
+                    card_membership
                 </i>
-                premium
+                pro
                 </p>
               <hr>
               <p>Learn how to automate text editing.</p>
+            </div>
+            <div class="card-action">
+              <a href="{{ url_for('private_module', number=5) }}">Learn Now
+              <i class="material-icons right">play_arrow
+              </i>
+              </a>
+            </div>
+          </div>
+            </a>
+        </div>
+        <div class="col s12 m4">
+              <a href="{{ url_for('private_module', number=5) }}">
+          <div class="card small card-hover darken-2 z-depth-5">
+            <div class="card-content">
+              <span class="card-title">
+                  Code Efficiently
+              </span>
+                <p class="yellow-text  text-accent-2 right" style="font-size: 10px;">
+                <i class="material-icons">
+                    card_membership
+                </i>
+                pro
+                </p>
+              <hr>
+              <p>Learn tips for coding efficiently in Vim. 
+              From Python and Ruby to Javascript and HTML.
+              </p>
             </div>
             <div class="card-action">
               <a href="{{ url_for('private_module', number=5) }}">Learn Now
