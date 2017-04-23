@@ -5,7 +5,29 @@
             <!--- STEP 1 -->
 <div id="step1">
 <p class="left-align blue-grey-text text-lighten-3">
-          1. Can you delete "delete me" on line x?
+          1. Delete the useless sentence on line 6
+          <br>
+</p>
+  <ul class="collapsible popout" data-collapsible="accordion">
+    <li>
+      <div class="collapsible-header">
+          <i class="material-icons">lightbulb_outline</i>hint</div>
+      <div class="collapsible-body blue-grey-text text-lighten-3"><span>
+              Jump to the second sentence
+<span class="chip">f.</span> 
+then 
+<span class="chip">das</span> 
+or 
+<span class="chip">dt.</span> 
+to delete the useless part!
+
+          </span>
+      </div>
+    </li>
+  </ul>
+
+<p class="left-align blue-grey-text text-lighten-3">
+          2. Can you efficiently close the parenthesis on line 16?
           <br>
 </p>
   <ul class="collapsible popout" data-collapsible="accordion">
@@ -14,15 +36,14 @@
           <i class="material-icons">lightbulb_outline</i>hint</div>
       <div class="collapsible-body blue-grey-text text-lighten-3"><span>
               Type
-<span class="chip">i</span> 
-to insert text
+<span class="chip">A</span> add any character at the end of a line.
           </span>
       </div>
     </li>
   </ul>
 
 <p class="left-align blue-grey-text text-lighten-3">
-          2. Can you quickly fix the typo on line 3 ("vam")
+          3. Go down to line 26
           <br>
 </p>
   <ul class="collapsible popout" data-collapsible="accordion">
@@ -30,25 +51,7 @@ to insert text
       <div class="collapsible-header">
           <i class="material-icons">lightbulb_outline</i>hint</div>
       <div class="collapsible-body blue-grey-text text-lighten-3"><span>
-              Type
-<span class="chip">esc</span> to enter normal mode. Then 
-<span class="chip">j</span> to go down. 
-(there's an even quicker way if you're clever)
-          </span>
-      </div>
-    </li>
-  </ul>
-
-<p class="left-align blue-grey-text text-lighten-3">
-          3. Oops, there's another typo at the top. "Practice" is missing all its Cs. Can you fix that? 
-          <br>
-</p>
-  <ul class="collapsible popout" data-collapsible="accordion">
-    <li>
-      <div class="collapsible-header">
-          <i class="material-icons">lightbulb_outline</i>hint</div>
-      <div class="collapsible-body blue-grey-text text-lighten-3"><span>
-              remember normal and insert modes
+              Try } (or specifying the exact line using :26)
           </span>
       </div>
     </li>
@@ -56,7 +59,7 @@ to insert text
 
 
 <p class="left-align blue-grey-text text-lighten-3">
-          4. Ok, well done. Add your name in the [] at the bottom
+          4. Can you find all occurences of the word "Vim"?
           <br>
 </p>
   <ul class="collapsible popout" data-collapsible="accordion">
@@ -64,7 +67,7 @@ to insert text
       <div class="collapsible-header">
           <i class="material-icons">lightbulb_outline</i>hint</div>
       <div class="collapsible-body blue-grey-text text-lighten-3"><span>
-<span class="chip">G</span> will bring you to the bottom in normal mode.
+<span class="chip">*</span> with your cursor on top of Vim will do the trick!
           </span>
       </div>
     </li>
@@ -81,33 +84,33 @@ to insert text
         <!--- EDITOR SETTINGS-->
         <div class="col s6" id="editor">
 """
-Are you ready to 
-
-Time to pratie that Vim foo!
+Move faster in Vim
 """
 
+I'm a useful. I'm not so useful. I'm useful!
 
-def get_bearings():
-    modes = [insert, normal]
-    if mode == normal:
-        apply("i")
-    return "vam goodness"
+def motions():
+    """simple motions for Vim"""
+    up = k
+    down = j 
+    right = l
+    left = h
+    return up + down + right + left
 
-def no_arrow_keys():
-    if up_arrow():
-        return k
-    if down_arrow():
-        return j
-    if right_arrow():
-        return l
-    return h
-
+I'm a sentence. (I'm a parenthesis
+        
+def faster_motions():
+    end_of_line = $
+    begining_of_line = 0
+    top_of_file = gg
+    bottom_of_file = G
+    
 
 """
-I'm a terrible speller, pardon my fransh
-
-Well done []!
+Vim
+Move faster without touching the mouse!
 """
+
 
 
 
