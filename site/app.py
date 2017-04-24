@@ -13,7 +13,7 @@ from oauth import OAuthSignIn
 
 
 app = Flask(__name__)
-app.config['DEBUG'] = False
+app.config['DEBUG'] = True
 app.config['TEMPLATES_AUTO_RELOAD'] = True
 # secret key is used for encryption
 app.config['SECRET_KEY'] = os.environ['SECRET_KEY']
