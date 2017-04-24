@@ -148,11 +148,7 @@ What if you wanted to match a bracket, parthensis, or quotes?
 <span class="chip">%</span>
 matches the other pair over your cursor.
 <blockquote class="blue-grey-text">
-    Try to:
-    <br>
-    1. jump to the '{' on line 25
-    <br>
-    2. can you change the value of c from 0 to 1?
+    Can you change the value of c from 0 to 1 on line 25?
     <br>
     (in as few key strokes as possible)
 </blockquote>
@@ -164,15 +160,27 @@ reveals all the places the word over your cursor appears.
 <br>
 </p>
 <blockquote class="blue-grey-text">
-    Try to:
-    <br>
-    1. move to the word 'vim' on line 3
-    <br>
-    2. can you uncover all the places the word 'vim' appears?
+    Can you find all occurence of 'vim'?
 </blockquote>
 <p class="left-align blue-grey-text text-lighten-3">
 We'll learn all about the magic of searching shortly.
 </p>
+<div class="row center">
+    <br>
+    <hr>
+    <br>
+    <a href="{{ url_for('module', number=4) }}" id="next-module" class="btn-large waves-effect waves-light  indigo accent-2">Next
+          <i class="material-icons right">play_arrow
+          </i>
+      </a>
+&emsp;
+&emsp;
+<a href="{{ url_for('landing') + '#modules' }}" id="modules" class="btn-large waves-effect waves-light red"> Modules
+          <i class="material-icons right">
+              view_module
+          </i>
+      </a>
+    </div>
 </div>
             <!--- STEP 4 END -->
             {% endblock %}
