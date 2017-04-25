@@ -141,6 +141,14 @@ def oauth_callback(provider):
         return redirect(url_for('charge'))
     return redirect(url_for('landing'))
 
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template('404.html'), 404
+
+@app.errorhandler(500)
+def interal_server_error(e):
+    return render_template('500.html')
+
 if __name__ == "__main__":
     db.create_all()
     app.run()
