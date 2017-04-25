@@ -165,3 +165,7 @@ main {
     background: #455a64;
 }
 
+.tag-line {
+    font-weight: 200;
+    color: #039be5;
+}
