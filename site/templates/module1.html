@@ -8,7 +8,7 @@
     <li class="tab col s3"><a href="#step4">4: Jumping</a></li>
   </ul>
         <!--- STEP 1 -->
-        <div id="step1">
+        <div id="step1" class="intro_text">
         <p class="flow-text right-align teal-text text-lighten-1">
         try it
         <i class="tiny material-icons">play_arrow </i>
@@ -155,7 +155,8 @@ saves your work.
 
 <!--- EDITOR SETTINGS-->
 {% block editor_text %}
-        <div class="col s6" id="editor">
+        <div class="col s6 interactive_vim" id="editor">
+            
     """
     learn vim interactively
     """
@@ -170,13 +171,46 @@ saves your work.
     """
     You can always find help on the left
 
-    As you learn, be adventerous. 
-    There's nothing here to break. 
-    """
+    As you learn, be adventerous.  
+    There's nothing here to break.  
+    """ 
 
     next = "Vim Super Powers"
 
 
-
         </div>
+{% endblock %}
+
+{% block introscript %}
+<script src="{{ url_for('static', filename='js/enjoyhint.min.js') }}"></script>
+<script>
+//initialize instance
+var enjoyhint_instance = new EnjoyHint({});
+
+//simple config. 
+//Only one step - highlighting(with description) "New" button 
+//hide EnjoyHint after a click on the button.
+var enjoyhint_script_steps = [
+      {
+              'click .intro_text' : 'Explanation of Vim\'s power',
+              'showNext' : true,
+                  'showSkip' : false,
+    'shape': 'circle'
+                    },  
+{
+    'click .interactive_vim' : 'Try out commands. This is your very own Vim!',
+    'shape': 'circle',
+    'skipButton' : {text: "Start"},
+
+},
+];
+
+
+//set script config
+enjoyhint_instance.set(enjoyhint_script_steps);
+
+//run Enjoyhint script
+enjoyhint_instance.run();
+</script>
+
 {% endblock %}
