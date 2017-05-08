@@ -15,14 +15,14 @@
 Let's replace all dogs with cats
 </p>
 <blockquote class="blue-grey-text">
-<b>:%s/</b><span class="red-text">dog</span>/ <span class="green-text">cat</span>/g
+    <b>:%s/</b><span class="red-text">dog</span>/ <span class="green-text">cat</span>/g
 <br>
 </blockquote>
 <p class="left-align blue-grey-text text-lighten-3">
 What just happened?
 <br>
 &emsp;
-<b>:%s</b> specifies search and replace
+<b><span class="blue-grey-text">:%s</span></b> specifies search and replace
 <br>
 &emsp;
 then we specify <span class="red-text">old word</span> 
@@ -32,7 +32,7 @@ using same syntax we learned for search.
 &emsp;
 specify <span class="green-text">new word</span>
 <br>
-and we end with "/g" for global 
+and we end with <span class="blue-grey-text">/g</span> for global 
 <br>to replace all instances of dog with cat. 
 <br>
 <br>
@@ -86,83 +86,73 @@ You can paste text from the register " followed by the register number.
             <!--- STEP 3 -->
 <div id="step3">
 <p class="left-align blue-grey-text text-lighten-3">
-You just delete a word. Now type 
-<blockquote class="blue-grey-text">
-try
-'
-<span class="chip red">d</span>
-+
-<span class="chip green">w</span>
-'
-at the start of line 13. 
-</blockquote>
-</p>
-<p class="left-align blue-grey-text text-lighten-3">
-You just delete a word. 
-<br>
-To repeat the last action, just type:
-<span class="chip">.</span>
-<br>
-<br>
-
-You can also run an action any number of times. Try adding 3 before deleting a word:
-<blockquote class="blue-grey-text">
-'
-<span class="chip red">3</span>
-+
-<span class="chip red">d</span>
-+
-<span class="chip green">w</span>
-'
-at the start of line 13. 
-</blockquote>
-</p>
-<p class="left-align blue-grey-text text-lighten-3">
-You can also repeat motions. Try moving to the next space:
+Let's greet Frank, Buddy, and the rest of the gang using Vim's automation powers.
+Macros allow you to record and replay any actions:
 </p>
 <blockquote class="blue-grey-text">
-'
-<span class="chip yellow">f</span>
-+
-<span class="chip green">space</span>
-'
+    1. Go to line 23 ("Frank")
+    <br>
+    2. Start recording by typing 
+<span class="chip">qa</span>
+    <br>
+&emsp;
+    (this tells vim to record in register 'a')
+    <br>
+    3. Type 
+    <span class="chip">I</span> 
+    to add a "hey" at the begining
+    <br>
+    4. Exit Insert mode then type 
+    <span class="chip">A</span> 
+    to add an '!' at the end 
+    <br>
+&emsp;
+    (you love Frank)
+    <br>
+    5. Finally type 
+<span class="chip">q</span> to stop recording
 </blockquote>
 <p class="left-align blue-grey-text text-lighten-3">
-To repeat the motion, just type: 
-<span class="chip">;</span>
+You just recorded your first macro. 
+Go down a line to "Buddy" and replay those steps by typing
+<span class="chip">@a</span>
+<br>
+<br>
+Isn't that amazing? Imagine all the ways you can use macros.
 </p>
-
             </div>
             <!--- STEP 3 END -->
 
             <!--- STEP 4 -->
 <div id="step4">
 <p class="left-align blue-grey-text text-lighten-3">
-One common operation is changing text inside quotes. 
+Let's greet our gang of dogs even more efficiently. 
+<br>
+First, clear the existing greetings.
+<br>
+Now, let's record our greeting for Frank again, but let's also include 
+a last step 'j' to go down to the next line:
 </p>
 <blockquote class="blue-grey-text">
-    change the value of x on line 8:
+    1. 
+<span class="chip">qa</span> to record Frank's greeting
     <br>
-'
-<span class="chip red">c</span>
-+
-<span class="chip">i</span>
-+
-<span class="chip green">"</span>
-'
+    2. add "hey" at the begining and "!" at the end
+    <br>
+    3. before stopping go down to the next line 'j'
+    <br>
+    4. stop recording by typing 
+<span class="chip">q</span>
 </blockquote>
-
 <p class="left-align blue-grey-text text-lighten-3">
-You can do the same for [], (), and {}.
+Now our cursor should be on the line with "Buddy".
 <br>
+Let's replay the macro 4 times by typing
+<span class="chip">4@a</span>
 <br>
-In Vim you don't need to memorize many complex commands. 
+We greeted all the dogs at once! 
 <br>
-Just learn a few useful actions and common objects. Then combining them is as natural as saying "delete inside brackets!
-
-<blockquote class="blue-grey-text">
-    <b>Challenge</b>: can you delete the useless paragraph in quotes in only three keystrokes?
-</blockquote>
+Macros are your best automation friend. Unleash their powers!
 </p>
 <div class="row center">
     <br>
@@ -188,7 +178,6 @@ learn vim interactively
 Pets are great
 """
 
-
 class Pet:
     list_of_pets = {"dog", "cat", "lion"}
     pet1 = "dog"
@@ -196,13 +185,17 @@ class Pet:
     pet3 = "elephant?"
 
     def __init__(self, name):
-        if name in list_of_pets:
-            self.name = name
-        else:
-            self.name = "unknown"
-
+        self.name = name
 
 my_pet = Pet("dog")
+
+
+Frank
+Buddy 
+Molly
+Max
+Lilly
+
 
 """
 I wonder which pet is better.
@@ -211,7 +204,6 @@ Dogs have benefits.
 Lions are scary.
 I think I'll search for a nice dog. 
 """
-
 
 next = "coding powers"
 
