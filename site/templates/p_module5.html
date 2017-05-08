@@ -3,114 +3,83 @@
 {% block steps %}
     <!-- TABS -->
       <ul class="tabs tabs-transparent">
-          <li class="tab col s3"><a class="active" href="#step1">1: Objects</a></li>
-        <li class="tab col s3"><a href="#step2">2: Actions</a></li>
-        <li class="tab col s3"><a href="#step3">3: Repeat</a></li>
-        <li class="tab col s3"><a href="#step4">4: Useful</a></li>
+          <li class="tab col s3"><a class="active" href="#step1">1: Replace</a></li>
+        <li class="tab col s3"><a href="#step2">2: Registers</a></li>
+        <li class="tab col s3"><a href="#step3">3: Intro Macros</a></li>
+        <li class="tab col s3"><a href="#step4">4: Macros</a></li>
       </ul>
 
             <!--- STEP 1 -->
             <div id="step1">
-            <p class="flow-text right-align teal-text text-lighten-1">
-            try it
-            <i class="tiny material-icons">play_arrow </i>
-            </p>
 <p class="left-align blue-grey-text text-lighten-3">
-Vim's syntax is intuitive:
-<span class="red-text"><b> Actions</b></span> operating on 
-text <span class="green-text"><b> Objects</b></span>
-<br>
-<br>
+Let's replace all dogs with cats
 </p>
 <blockquote class="blue-grey-text">
-try typing
-'
-<span class="chip red">d</span>
-+
-<span class="chip">a</span>
-+
-<span class="chip green">w</span>
-'
-to delete the word under your cursor
+<b>:%s/</b><span class="red-text">dog</span>/ <span class="green-text">cat</span>/g
+<br>
 </blockquote>
 <p class="left-align blue-grey-text text-lighten-3">
-<span class="chip red">d</span>
-is the delete <b> Action</b>
+What just happened?
 <br>
-<span class="chip">a</span>
-is around
+&emsp;
+<b>:%s</b> specifies search and replace
 <br>
-<span class="chip green">w</span>
-w is word.
+&emsp;
+then we specify <span class="red-text">old word</span> 
+<br>
+using same syntax we learned for search.
+<br>
+&emsp;
+specify <span class="green-text">new word</span>
+<br>
+and we end with "/g" for global 
+<br>to replace all instances of dog with cat. 
 <br>
 <br>
-This syntax generalizes to sentences, paragraphs, quotes, and other objects. 
-To delete a paragraph:
-'
-<span class="chip red">d</span>
-+
-<span class="chip">a</span>
-+
-<span class="chip green">p</span>
-'
+<b>Tip</b>: if you want to confirm before replacing add 'c' at the end.
 <br>
-            </p>
+<br>
+You can also search only a specific region of text by visually selecting first, then typing 
+:s/<span class="red-text">oldword</span>/ <span class="green-text">newword</span>/g
+</p>
             </div>
             <!--- STEP 1 END -->
 
             <!--- STEP 2 -->
             <div id="step2">
 <p class="left-align blue-grey-text text-lighten-3">
-Handy Actions:
-around, inside
-paragraphs, quotes, brackets, sentences, words
-<br>
-&emsp;
-<span class="chip red">d</span>
-delete
-<br>
-&emsp;
-<span class="chip red">c</span>
-to change (deletes and puts you in insert mode)
-<br>
-&emsp;
-<span class="chip red">y</span>
-yank (vim lingo for copy)
+Vim can remember what you copied long ago, even if you copy over it. Let's introduce you to Vim's intelligent clipboard:
 </p>
-<p class="left-align blue-grey-text text-lighten-3">
-These actions can operate
-<span class="chip">a</span>
-around
-or 
-<span class="chip">i</span>
-inside
-</p>
-<p class="left-align blue-grey-text text-lighten-3">
-Objects like a
-<span class="chip green">p</span>
-paragraph or
-<span class="chip green">s</span>
-sentence, but also
-<br>
-&emsp;
-<span class="chip green">"</span>
-quotes,
-<span class="chip green">(</span>
-and parenthesis.
-<br>
-<br>
 <blockquote class="blue-grey-text">
-try
-'
-<span class="chip red">d</span>
-+
-<span class="chip">i</span>
-+
-<span class="chip green">"</span>
-'
-inside the parenthesis in line 8. Ain't it magic?
+    Let's delete line 5 
+    <br>
+    remember 
+<span class="chip">dd</span>?
 </blockquote>
-            </p>
+<p class="left-align blue-grey-text text-lighten-3">
+Now let's copy something else. 
+</p>
+<blockquote class="blue-grey-text">
+    try copying line 3 (yy maybe handy)
+</blockquote>
+<p class="left-align blue-grey-text text-lighten-3">
+Behold the wonders of Vim's clipboard:
+</p>
+<blockquote class="blue-grey-text">
+    Type
+&emsp;
+<span class="chip">:reg</span>
+</blockquote>
+<p class="left-align blue-grey-text text-lighten-3">
+You should see both the text you copied and the text you deleted! 
+<br>
+You can paste text from the register " followed by the register number.
+</p>
+<blockquote class="blue-grey-text">
+    Try pasting "Pets are great" using
+&emsp;
+<span class="chip">"1p</span>
+</blockquote>
             </div>
             <!--- STEP 2 END -->
 
@@ -215,25 +184,36 @@ Just learn a few useful actions and common objects. Then combining them is as na
         <div class="col s6" id="editor">
 """
 learn vim interactively
+
+Pets are great
 """
 
 
-def useless():
-    x = "delete me"
-    my_list = [thing1, thing2, thing3]
-    return None
+class Pet:
+    list_of_pets = {"dog", "cat", "lion"}
+    pet1 = "dog"
+    pet2 = "cat"
+    pet3 = "elephant?"
 
+    def __init__(self, name):
+        if name in list_of_pets:
+            self.name = name
+        else:
+            self.name = "unknown"
+
+
+my_pet = Pet("dog")
 
 """
-This is a useless paragraph. Full of
-mumbojumbo. Please delete 
-all of me, so I don't clutter 
-this workspace. 
-Can you do it with a single action on a object?
+I wonder which pet is better.
+Cats have benefits.
+Dogs have benefits.
+Lions are scary.
+I think I'll search for a nice dog. 
 """
 
 
-next = "superpowers: actions + objects"
+next = "coding powers"
 
 
         </div>
