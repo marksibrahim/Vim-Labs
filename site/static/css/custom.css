@@ -169,3 +169,19 @@ main {
     font-weight: 200;
     color: #039be5;
 }
+ 
+.mainwhys {
+    text-align: left; 
+    font-size: 16px;
+    color: #27ae60;
+}
+
+.subbullets {
+    font-weight: 300;
+    color: #5e7a88;
+    font-size: 12px;
+    -webkit-margin-before: 0em;
+    -webkit-margin-after: 0em;
+    box-sizing: context-box;
+
+}
