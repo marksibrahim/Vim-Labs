@@ -1,0 +1,184 @@
+{% extends "_base-module.html" %}
+
+{% block steps %}
+    <!-- TABS -->
+      <ul class="tabs tabs-transparent">
+        <li class="tab col s3"><a class="active" href="#step1">1: Format</a></li>
+        <li class="tab col s3"><a href="#step2">2: Edit</a></li>
+        <li class="tab col s3"><a href="#step3">3: Command</a></li>
+        <li class="tab col s3"><a href="#step4">4: Next</a></li>
+      </ul>
+
+            <!--- STEP 1 -->
+            <div id="step1">
+<p class="left-align blue-grey-text text-lighten-3">
+With Vim, you can format code to your liking efficiently. 
+<br>
+Say you want to turn a variable name uppercase (to make it a constant)...
+</p>
+<blockquote class="blue-grey-text">
+    try <span class="red-text">~</span> to turn anything you select to uppercase
+<br>
+</blockquote>
+<p class="left-align blue-grey-text text-lighten-3">
+Another formatting task is indentation. Vim let's you automatically indent several lines y aligning them with the first.
+</p>
+<blockquote class="blue-grey-text">
+    try aligning the top line with the remaining lines
+</blockquote>
+<p class="left-align blue-grey-text text-lighten-3">
+Finally, if you need to adjust the indentation of a single line, type 
+<span class="chip">></span> 
+<br>
+<span class="chip"><</span>  to unindent
+</p>
+            </div>
+            <!--- STEP 1 END -->
+
+            <!--- STEP 2 -->
+            <div id="step2">
+<p class="left-align blue-grey-text text-lighten-3">
+Vim can remember what you copied long ago, even if you copy over it. Let's introduce you to Vim's intelligent clipboard:
+</p>
+<blockquote class="blue-grey-text">
+    Let's delete line 5 
+    <br>
+    remember 
+<span class="chip">dd</span>?
+</blockquote>
+            </div>
+            <!--- STEP 2 END -->
+
+            <!--- STEP 3 -->
+<div id="step3">
+<p class="left-align blue-grey-text text-lighten-3">
+Let's greet Frank, Buddy, and the rest of the gang using Vim's automation powers.
+Macros allow you to record and replay any actions:
+</p>
+<blockquote class="blue-grey-text">
+    1. Go to line 23 ("Frank")
+    <br>
+    2. Start recording by typing 
+<span class="chip">qa</span>
+    <br>
+&emsp;
+    (this tells vim to record in register 'a')
+    <br>
+    3. Type 
+    <span class="chip">I</span> 
+    to add a "hey" at the begining
+    <br>
+    4. Exit Insert mode then type 
+    <span class="chip">A</span> 
+    to add an '!' at the end 
+    <br>
+&emsp;
+    (you love Frank)
+    <br>
+    5. Finally type 
+<span class="chip">q</span> to stop recording
+</blockquote>
+<p class="left-align blue-grey-text text-lighten-3">
+You just recorded your first macro. 
+Go down a line to "Buddy" and replay those steps by typing
+<span class="chip">@a</span>
+<br>
+<br>
+Isn't that amazing? Imagine all the ways you can use macros.
+</p>
+            </div>
+            <!--- STEP 3 END -->
+
+            <!--- STEP 4 -->
+<div id="step4">
+<p class="left-align blue-grey-text text-lighten-3">
+Let's greet our gang of dogs even more efficiently. 
+<br>
+First, clear the existing greetings.
+<br>
+Now, let's record our greeting for Frank again, but let's also include 
+a last step 'j' to go down to the next line:
+</p>
+<blockquote class="blue-grey-text">
+    1. 
+<span class="chip">qa</span> to record Frank's greeting
+    <br>
+    2. add "hey" at the begining and "!" at the end
+    <br>
+    3. before stopping go down to the next line 'j'
+    <br>
+    4. stop recording by typing 
+<span class="chip">q</span>
+</blockquote>
+<p class="left-align blue-grey-text text-lighten-3">
+Now our cursor should be on the line with "Buddy".
+<br>
+Let's replay the macro 4 times by typing
+<span class="chip">4@a</span>
+<br>
+We greeted all the dogs at once! 
+<br>
+Macros are your best automation friend. Unleash their powers!
+</p>
+<div class="row center">
+    <br>
+    <hr>
+    <br>
+<a href="{{ url_for('landing') + '#modules' }}" id="modules" class="btn-large waves-effect waves-light red"> Modules
+          <i class="material-icons right">
+              view_module
+          </i>
+      </a>
+    </div>
+
+</div>
+            <!--- STEP 4 END -->
+
+            {% endblock %}
+
+            {% block editor_text %}
+        <!--- EDITOR SETTINGS-->
+        <div class="col s6" id="editor">
+"""
+learn vim interactively
+
+Pets are great
+"""
+
+class Pet:
+    list_of_pets = {"dog", "cat", "lion"}
+    pet1 = "dog"
+    pet2 = "cat"
+    pet3 = "elephant?"
+
+    def __init__(self, name):
+        self.name = name
+
+my_pet = Pet("dog")
+
+
+Frank
+Buddy 
+Molly
+Max
+Lilly
+
+
+"""
+I wonder which pet is better.
+Cats have benefits.
+Dogs have benefits.
+Lions are scary.
+I think I'll search for a nice dog. 
+"""
+
+next = "coding powers"
+
+
+        </div>
+        </div>
+    </div>
+  
+  </div>
+  {% endblock %}
+

@@ -99,6 +99,9 @@
             <!-- TABS -->
     {% block steps %}
     {% endblock %}
+        <div class="row right-align">
+  <a id="next-tab" class="btn-flat waves-effect waves-light" style="color: #f44336;"><i class="material-icons">fast_forward</i></a>
+        </div>
 
         </div>
 
@@ -177,5 +180,24 @@
   }
   </script>
 
+  <!-- Next Tab Button -->
+  <script>
+    cTab = "1";
+    $("a#next-tab").click( function() {
+        console.log("button clicked on tab " + cTab);
+        // get current tab if manually changed
+        $("ul.tabs").tabs({ onShow: function(tab) { cTab = tab["selector"].slice(-1); } });
+        // compute next tab
+        nTab = parseInt(cTab) + 1;
+        nTab = nTab.toString();
+        console.log(nTab);
+        // catch case where index exceeds number of tabs
+        if (nTab == "5") {
+            nTab = "1";
+        }
+        // set to net tab
+        $('ul.tabs').tabs('select_tab', "step"+nTab);
+    });
+  </script>
   </body>
 </html>
