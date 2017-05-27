@@ -1,5 +1,5 @@
 """
-runs flask app
+Runs flask app
 """
 
 import os
@@ -39,6 +39,7 @@ stripe.api_key = "sk_test_n1uEkuppBSnsH0pI3J6M17V0"
 amount = 1500
 
 class User(UserMixin, db.Model):
+    """User class to determine premium users"""
     __tablename__ = 'users'
     id = db.Column(db.Integer, primary_key=True)
     social_id = db.Column(db.String(64), nullable=False, unique=True)
@@ -74,12 +75,14 @@ def private_module(number):
 @app.route('/charge')
 @login_required
 def charge():
+    """Page to accept Strip payment"""
     return render_template('charge.html', key=stripe_publishable_key, dollar_amount=int(amount/100))
 
 
 @app.route('/paid', methods=['POST'])
 @login_required
 def paid():
+    """Accepts payment from charge.html and store premium user in DB"""
     # Token is created using Stripe.js or Checkout!
     # Get the payment token submitted by the form:
     token = request.form['stripeToken'] # Using Flask

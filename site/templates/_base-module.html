@@ -196,11 +196,10 @@
         nTab = nTab.toString();
         console.log(nTab);
         // catch case where index exceeds number of tabs
-        if (nTab == "5") {
-            nTab = "1";
+        if (nTab != "5") {
+            // set to net tab
+            $('ul.tabs').tabs('select_tab', "step"+nTab);
         }
-        // set to net tab
-        $('ul.tabs').tabs('select_tab', "step"+nTab);
     });
   </script>
   </body>
