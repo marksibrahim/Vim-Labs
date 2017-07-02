@@ -109,7 +109,10 @@
     </div>
         <div class="row right-align">
         <div class="col s6 ">
-  <a id="next-tab" class="btn-flat waves-effect waves-light" style="color: #f44336;"><i class="material-icons">trending_flat</i></a>
+  <a id="next-tab" class="btn-flat waves-effect waves-light" style="color: #f44336;">
+      <span class="blue-grey-text">j</span>
+      <i class="material-icons">trending_flat</i>
+  </a>
         </div>
         <div class="col s6 ">
         </div>
@@ -135,6 +138,8 @@
 
   <!--  Scripts-->
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <!-- adds keyboard shortcuts -->
+  <script src="//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
   <script src="{{ url_for('static', filename='js/materialize.js') }}"></script>
   <script src="{{ url_for('static', filename='js/init.js') }}"></script>
 
@@ -200,6 +205,13 @@
             // set to net tab
             $('ul.tabs').tabs('select_tab', "step"+nTab);
         }
+    });
+  </script>
+  <!--- Add Keyboard Shortcut for Next Tab -->
+  <script>
+    Mousetrap.bind('j', function(e) {
+        // click next if j is pressed
+       document.getElementById("next-tab").click();
     });
   </script>
   </body>
