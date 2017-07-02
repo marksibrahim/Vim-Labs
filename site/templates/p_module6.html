@@ -14,23 +14,32 @@
 <p class="left-align blue-grey-text text-lighten-3">
 With Vim, you can format code to your liking efficiently. 
 <br>
-Say you want to turn a variable name uppercase (to make it a constant)...
+Say you want to turn a variable name uppercase,
 </p>
 <blockquote class="blue-grey-text">
     try <span class="red-text">~</span> to turn anything you select to uppercase
 <br>
 </blockquote>
 <p class="left-align blue-grey-text text-lighten-3">
-Another formatting task is indentation. Vim let's you automatically indent several lines y aligning them with the first.
+Say you want to align the indentation of several lines,
 </p>
 <blockquote class="blue-grey-text">
-    try aligning the top line with the remaining lines
+    visually select lines using
+    <span class="chip">V</span>
+    then
+    <span class="chip"><<</span>
 </blockquote>
 <p class="left-align blue-grey-text text-lighten-3">
-Finally, if you need to adjust the indentation of a single line, type 
-<span class="chip">></span> 
-<br>
-<span class="chip"><</span>  to unindent
+    To indent further, repeat using
+<span class="chip">.</span>
+</p>
+                <blockquote class="blue-grey-text">
+    Can you align the names starting at line 20?
+            </blockquote>
+    <br>
+                <p class="left-align blue-grey-text text-lighten-3">
+    To go backwards use
+    <span class="chip">>></span>
 </p>
             </div>
             <!--- STEP 1 END -->
@@ -41,10 +50,19 @@ Finally, if you need to adjust the indentation of a single line, type
 Vim can remember what you copied long ago, even if you copy over it. Let's introduce you to Vim's intelligent clipboard:
 </p>
 <blockquote class="blue-grey-text">
-    Let's delete line 5 
-    <br>
-    remember 
+    Let's delete line 5. Remember
 <span class="chip">dd</span>?
+    <br>
+    Let's also delete Lilly on line 23
+</blockquote>
+<p class="left-align blue-grey-text text-lighten-3">
+    Oops, what if we now realize we need that first sentence?
+    It turns out everything you delete or copy is stored in Vim's intelligent clipboard.
+</p>
+<blockquote class="blue-grey-text">
+<span class="chip">:reg</span> will bring up everything in the clipboard.
+    <br>
+    <span class="chip">"1</span>+<span class="chip">p</span> to paste the original text
 </blockquote>
             </div>
             <!--- STEP 2 END -->
@@ -119,6 +137,7 @@ Let's replay the macro 4 times by typing
 We greeted all the dogs at once! 
 <br>
 Macros are your best automation friend. Unleash their powers!
+    <br>
 </p>
 <div class="row center">
     <br>
@@ -131,10 +150,21 @@ Macros are your best automation friend. Unleash their powers!
       </a>
     </div>
 
+    <p class="left-align blue-grey-text text-lighten-3">
+    Congrats on getting this far!
+    You've gained text editing superpowers, but more Vim wonders await.
+    There are many ways to continue honing your craft.
+        Checkout <a href="http://vimcasts.org/publications/">Vim Casts</a> for short videos of Vim goodies,
+        <a href="https://danielmiessler.com/study/vim/#gs.62K7lyQ">a Vim tutorial and primer</a> for more learnings,
+        and
+        dive in yourself by typing
+        <span class="chip">vimtutor</span> in your command line!
+    </p>
 </div>
             <!--- STEP 4 END -->
 
             {% endblock %}
+<!-- Congrats Section -->
 
             {% block editor_text %}
         <!--- EDITOR SETTINGS-->
