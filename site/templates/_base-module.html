@@ -40,6 +40,7 @@
         z-index: 10;
     }
 
+
     .fullScreen {
         overflow: hidden
     }
@@ -63,6 +64,7 @@
         border-radius: 10px 10px 10px 10px;
         box-shadow: 0 0 12px 0 lightblue;
     }
+
 </style>
 
 </head>
@@ -209,12 +211,27 @@
         }
     });
   </script>
+
   <!--- Add Keyboard Shortcut for Next Tab -->
   <script>
     Mousetrap.bind('j', function(e) {
         // click next if j is pressed
        document.getElementById("next-tab").click();
     });
+  </script>
+
+  <!-- Highlight Editor when clicked -->
+  <script>
+  editor.on("focus", function() {
+      $("#editor").css({
+          'box-shadow': '0 6px 10px 0 rgba(0, 0, 0, 0.2), 0 1px 3px 0 #0089ec'
+      });
+  });
+  editor.on("blur", function() {
+      $("#editor").css({
+          'box-shadow': '0 6px 10px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)'
+      });
+  });
   </script>
   </body>
 </html>
