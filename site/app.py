@@ -13,8 +13,8 @@ from oauth import OAuthSignIn
 
 
 app = Flask(__name__)
-app.config['DEBUG'] = True
-app.config['TEMPLATES_AUTO_RELOAD'] = True
+app.config['DEBUG'] = False
+app.config['TEMPLATES_AUTO_RELOAD'] = False
 # secret key is used for encryption
 app.config['SECRET_KEY'] = os.environ['SECRET_KEY']
 # when running locally, you may to occassionaly update when secret is rotated
@@ -32,10 +32,14 @@ db = SQLAlchemy(app)
 lm = LoginManager(app)
 lm.login_view = 'login'
 
-stripe_publishable_key = "pk_test_ZLPiXAZhOE09Nrc4p3AFe36C"
-stripe.api_key = "sk_test_j6Oc2z6SJ5yb6VnTzt0TRZPA"
+stripe_publishable_key = "pk_live_b02zbFTh4Gl4Mc6YTyQjtMgO"
+stripe.api_key = os.environ["STRIPE_SECRET"]
 
-# Vim Labs Premium
+# Uncomment for testing Stripe payments
+# stripe_publishable_key = "pk_test_ZLPiXAZhOE09Nrc4p3AFe36C"
+# stripe.api_key = "sk_test_j6Oc2z6SJ5yb6VnTzt0TRZPA"
+
+# Vim Labs Pro
 AMOUNT_CENTS = 1500
 
 
@@ -100,7 +104,7 @@ def paid():
     current_user.paid = True
     db.session.add(current_user)
     db.session.commit()
-    return render_template('login.html')
+    return render_template('login.html', pro=True)
 
 
 @lm.user_loader

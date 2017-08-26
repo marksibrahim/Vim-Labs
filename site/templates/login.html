@@ -6,8 +6,16 @@
         <div class="col s12">
         {% if current_user.is_authenticated %}
             <h6 class="blue-grey-text text-lighten-2">Vim Super Powers await you</h6>
-            <p><a href="{{ url_for('logout') }}">Logout</a></p>
-        {% else %}
+            {% if pro %}
+            <p class="yellow-text  text-accent-2" style="font-size: 10px;">
+                <i class="material-icons">
+                    card_membership
+                </i>
+                pro
+            </p>
+            {% endif %}
+
+            {% else %}
             <a href="{{ url_for('oauth_authorize', provider='google') }}">
                 <img id="g-sign-btn" class="my-hover" src="{{ url_for('static', filename='img/btn_google_signin_dark_normal_web.png') }}">
             </a>
