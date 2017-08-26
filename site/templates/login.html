@@ -5,7 +5,6 @@
         <div class="row center">
         <div class="col s12">
         {% if current_user.is_authenticated %}
-            <h4 class="blue-grey-text text-lighten-4">Hi, {{ current_user.nickname }}!</h4>
             <h6 class="blue-grey-text text-lighten-2">Vim Super Powers await you</h6>
             <p><a href="{{ url_for('logout') }}">Logout</a></p>
         {% else %}

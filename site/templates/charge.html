@@ -4,7 +4,13 @@
 <script src="https://js.stripe.com/v3/"></script>
 <div class="row" id="stripe-form">
   <h4 class="blue-grey-text text-lighten-5 center-align">
-    Vim Labs Premium
+    Vim Labs
+      <p class="yellow-text  text-accent-2" style="font-size: 10px;">
+          <i class="material-icons">
+              card_membership
+          </i>
+          pro
+      </p>
   </h4>
 <form action="/paid" method="post" id="payment-form">
   <label>
@@ -15,11 +21,11 @@
     <div id="card-element" class="field is-empty"></div>
     <span><span>Card</span></span>
   </label>
-  <button type="submit">Pay ${{ dollar_amount }}</button>
+  <button type="submit">Pay ${{ amount_dollars }}</button>
   <div class="outcome">
     <div class="error"></div>
     <div class="success">
-      Welcome to Vim Labs Premium!
+      Vim Labs Pro
     </div>
   </div>
 </form>

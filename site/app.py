@@ -32,11 +32,12 @@ db = SQLAlchemy(app)
 lm = LoginManager(app)
 lm.login_view = 'login'
 
-stripe_publishable_key = "pk_test_Wypi43lE9wNRG6zE8FC6Rbcz"
-stripe.api_key = "sk_test_n1uEkuppBSnsH0pI3J6M17V0"
+stripe_publishable_key = "pk_test_ZLPiXAZhOE09Nrc4p3AFe36C"
+stripe.api_key = "sk_test_j6Oc2z6SJ5yb6VnTzt0TRZPA"
 
-# for Vim Labs Premium 
-amount = 1500
+# Vim Labs Premium
+AMOUNT_CENTS = 1500
+
 
 class User(UserMixin, db.Model):
     """User class to determine premium users"""
@@ -45,8 +46,7 @@ class User(UserMixin, db.Model):
     social_id = db.Column(db.String(64), nullable=False, unique=True)
     nickname = db.Column(db.String(64), nullable=False)
     email = db.Column(db.String(64), nullable=True)
-    # defaults to true; change this behavior once live
-    paid = db.Column(db.Boolean)
+    paid = db.Column(db.Boolean, default=False)
 
 
 @app.route('/')
@@ -76,7 +76,9 @@ def private_module(number):
 @login_required
 def charge():
     """Page to accept Strip payment"""
-    return render_template('charge.html', key=stripe_publishable_key, dollar_amount=int(amount/100))
+    return render_template('charge.html',
+                           key=stripe_publishable_key,
+                           amount_dollars=int(AMOUNT_CENTS/100))
 
 
 @app.route('/paid', methods=['POST'])
@@ -89,7 +91,7 @@ def paid():
 
     # Charge the user's card:
     charge = stripe.Charge.create(
-      amount=amount,# Amount in cents
+      amount=AMOUNT_CENTS,
       currency="usd",
       description="Vim Labs Premium",
       source=token,
@@ -106,14 +108,16 @@ def load_user(id):
     return User.query.get(int(id))
 
 
+@app.route('/login')
+def login():
+    return render_template('login.html')
+
+
 @app.route('/logout')
 def logout():
     logout_user()
     return redirect(url_for('landing'))
 
-@app.route('/login')
-def login():
-    return render_template('login.html')
 
 @app.route('/authorize/<provider>')
 def oauth_authorize(provider):
@@ -144,13 +148,16 @@ def oauth_callback(provider):
         return redirect(url_for('charge'))
     return redirect(url_for('landing'))
 
+
 @app.errorhandler(404)
 def page_not_found(e):
     return render_template('404.html'), 404
 
+
 @app.errorhandler(500)
 def interal_server_error(e):
     return render_template('500.html')
+
 
 if __name__ == "__main__":
     db.create_all()
