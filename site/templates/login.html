@@ -17,7 +17,7 @@
 
             {% else %}
             <a href="{{ url_for('oauth_authorize', provider='google') }}">
-                <img id="g-sign-btn" class="my-hover" src="{{ url_for('static', filename='img/btn_google_signin_dark_normal_web.png') }}">
+                <img id="g-sign-btn" class="my-hover" src="{{ url_for('static', filename='img/btn_google_signin_dark_normal_web.png') }}" alt="google sign in button">
             </a>
         {% endif %}
         </div>
