@@ -53,9 +53,9 @@ class User(UserMixin, db.Model):
     email = db.Column(db.String(64), nullable=True)
     paid = db.Column(db.Boolean, default=False)
 
-     def __repr__(self):
-         id_str = "ID: {}, social_id: {}".format(self.id, self.social_id)
-         return "{} nickname: {}, email: {}, paid: {}".format(id_str, 
+    def __repr__(self):
+        id_str = "ID: {}, social_id: {}".format(self.id, self.social_id)
+        return "{} nickname: {}, email: {}, paid: {}".format(id_str, 
                                                               self.nickname,
                                                               self.email,
                                                               self.paid)
