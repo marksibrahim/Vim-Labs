@@ -2,6 +2,7 @@
 Runs flask app
 """
 
+import logging
 import os
 import stripe
 from flask import Flask
@@ -51,6 +52,13 @@ class User(UserMixin, db.Model):
     nickname = db.Column(db.String(64), nullable=False)
     email = db.Column(db.String(64), nullable=True)
     paid = db.Column(db.Boolean, default=False)
+
+     def __repr__(self):
+         id_str = "ID: {}, social_id: {}".format(self.id, self.social_id)
+         return "{} nickname: {}, email: {}, paid: {}".format(id_str, 
+                                                              self.nickname,
+                                                              self.email,
+                                                              self.paid)
 
 
 @app.route('/')
@@ -155,11 +163,25 @@ def oauth_callback(provider):
 
 @app.errorhandler(404)
 def page_not_found(e):
+    """log and return a pretty 404"""
+    if current_user.is_anonymous:
+        user_info = "anonymous user"
+    else:
+        user_info = str(current_user)
+
+    logging.error("404 ERROR: {}".format(user_info))
     return render_template('404.html'), 404
 
 
 @app.errorhandler(500)
 def interal_server_error(e):
+    """log and return a pretty 500"""
+    if current_user.is_anonymous:
+        user_info = "anonymous user"
+    else:
+        user_info = str(current_user)
+
+    logging.error("500 ERROR: {}".format(user_info))
     return render_template('500.html')
 
 
