@@ -31,7 +31,7 @@ selecting up to a character <span class="chip">f + character</span>
 <br>
 For more complex selections, activate Visual Block Mode: 
 <br>
-<span class="chip">V</span>
+<span class="chip">ctrl + v</span>
 + any motion. You can use j, k, l to highlight blocks of text. 
 <br>
 So what? You can, for example, insert text at the begining of many lines all at once! 
@@ -39,10 +39,15 @@ So what? You can, for example, insert text at the begining of many lines all at 
 <blockquote class="blue-grey-text">
 try selecting the first character on lines 6-9: 
 <br>
-<span class="chip">V + j</span>
-then 
+activate visual block mode
+<span class="chip">ctrl + v</span>
+then select lines
+<span class="chip">j</span>
+<br>
+then insert
 <span class="chip">I</span>
-and ')'. Once you escape to Normal mode, text will appear on all lines!
+and '('. 
+Once you escape to Normal mode, text will appear on all lines!
 </blockquote>
 
 </div>
@@ -116,7 +121,7 @@ Repitition can be applied everywhere, even with undo. Make two changes. To undo 
 How do you search for a word in Vim? It's easy! 
 <br>
 type
-<span class="chip">\</span>
+<span class="chip">/</span>
 to activate search. Type any word to search.
 <br>
 &emsp;
@@ -131,7 +136,7 @@ Vim search shines, because it accepts search patterns by default&mdash;not just 
 </p>
 <blockquote class="blue-grey-text">
 Let's search for all words begining with 'vi':
-<span class="chip">\vi.</span>
+<span class="chip">/vi.</span>
 </blockquote>
 
 <p class="left-align blue-grey-text text-lighten-3">
@@ -139,7 +144,7 @@ Let's search for all words begining with 'vi':
 in a search pattern matches any character
 <br>
 Find this or that using 
-<span class="chip">\this\|that</span>
+<span class="chip">/this\|that</span>
 <br>
 The "\" above is an escape character which takes away any meaning a special character carries.
 <br>
