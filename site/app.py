@@ -41,7 +41,7 @@ stripe.api_key = os.environ["STRIPE_SECRET"]
 # stripe.api_key = "sk_test_j6Oc2z6SJ5yb6VnTzt0TRZPA"
 
 # Vim Labs Pro
-AMOUNT_CENTS = 1500
+AMOUNT_CENTS = 500
 
 
 class User(UserMixin, db.Model):
@@ -187,4 +187,7 @@ def interal_server_error(e):
 
 if __name__ == "__main__":
     db.create_all()
+    # development server
+    app.config['DEBUG'] = True
+    app.config['TEMPLATES_AUTO_RELOAD'] = True
     app.run()

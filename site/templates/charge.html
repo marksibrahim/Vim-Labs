@@ -3,15 +3,26 @@
 
 <script src="https://js.stripe.com/v3/"></script>
 <div class="row" id="stripe-form">
-  <h4 class="blue-grey-text text-lighten-5 center-align">
-    Vim Labs
-      <p class="yellow-text  text-accent-2" style="font-size: 10px;">
-          <i class="material-icons">
-              card_membership
-          </i>
-          pro
-      </p>
-  </h4>
+    <h4 class="blue-grey-text text-lighten-5 center-align">
+        Vim Labs
+
+    </h4>
+    <p class="yellow-text  text-accent-2 center-align" style="font-size: 10px;">
+        <i class="material-icons">
+            card_membership
+        </i>
+        pro
+    </p>
+
+    <p class="blue-grey-text text-lighten-2 center-align">
+        lifetime access to pro lessons
+    </p>
+
+    <div class="center-align center">
+        <img src="{{url_for('static', filename='img/powered_by_stripe.png')}}"/>
+    </div>
+
+
 <form action="/paid" method="post" id="payment-form">
   <label>
     <input name="cardholder-name" class="field is-empty" placeholder="Jane Doe" />
