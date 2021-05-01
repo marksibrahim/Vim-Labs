@@ -1,218 +1,226 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
-  <meta name="google-signin-client_id" content="939082582563-i176fv0cjuta33p5r9g57v1kvmmu94be.apps.googleusercontent.com">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no" />
+  <meta name="google-signin-client_id"
+    content="939082582563-i176fv0cjuta33p5r9g57v1kvmmu94be.apps.googleusercontent.com">
 
 
   <title>Vim Labs</title>
 
   <!-- CSS  -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="{{ url_for('static', filename='css/materialize.css') }}" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <link href="{{ url_for('static', filename='css/style.css') }}" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <link href="{{ url_for('static', filename='css/custom.css') }}" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="{{ url_for('static', filename='css/materialize.css') }}" type="text/css" rel="stylesheet"
+    media="screen,projection" />
+  <link href="{{ url_for('static', filename='css/style.css') }}" type="text/css" rel="stylesheet"
+    media="screen,projection" />
+  <link href="{{ url_for('static', filename='css/custom.css') }}" type="text/css" rel="stylesheet"
+    media="screen,projection" />
 
   <!-- favicon -->
   <link rel="shortcut icon" href="{{ url_for('static', filename='img/vim-labs.ico') }}" type="image/x-icon">
 </head>
 
 <body style="background-color: #1c2834;">
-    <main>
-  <nav style="background-color: #19242f;" role="navigation">
-    <div class="nav-wrapper container">
-        <a id="logo-container" href="#" class="brand-logo white-text"> 
-            <i class="material-icons">subtitles</i>Vim Labs
+  <main>
+    <nav style="background-color: #19242f;" role="navigation">
+      <div class="nav-wrapper container">
+        <a id="logo-container" href="#" class="brand-logo white-text">
+          <i class="material-icons">subtitles</i>Vim Labs
         </a>
-         <ul class="right hide-on-med-and-down ">
-        {% if current_user.is_authenticated %}
-            <li>Hi, {{ current_user.nickname }}!</li>
-            <li><a href="{{ url_for('logout') }}">Logout</a></li>
-        {% else %}
-        {% endif %}
-      </ul>
-    </div>
-  </nav>
+        <ul class="right hide-on-med-and-down ">
+          {% if current_user.is_authenticated %}
+          <li>Hi, {{ current_user.nickname }}!</li>
+          <li><a href="{{ url_for('logout') }}">Logout</a></li>
+          {% else %}
+          {% endif %}
+        </ul>
+      </div>
+    </nav>
 
-  <div class="container">
+    <div class="container">
       {% block top_block %}
       {% endblock %}
-  </div>
+    </div>
 
-  <div class="container">
+    <div class="container">
       {% block page_content %}
       {% endblock %}
-        <div class="row" id="modules">
+      <div class="row" id="modules">
         <div class="divider"></div>
         <div class="col s12 center">
 
           <h3><i class="mdi-content-send"></i></h3>
           <h4 class=" blue-grey-text text-lighten-4" style="font-weight: 300;">
-              <i class="material-icons">aspect_ratio</i>
-              <br/>
-              Modules
+            <i class="material-icons">aspect_ratio</i>
+            <br />
+            Modules
           </h4>
           <h6></h6>
 
-      <div class="row">
-        <div class="col s12 m4">
+          <div class="row">
+            <div class="col s12 m4">
               <a href="{{ url_for('module', number=1) }}">
-          <div class="card small darken-2 z-depth-5">
-            <div class="card-content ">
-              <span class="card-title">Basic Editing</span>
-              <hr>
-              <p>
-              <br>
-              Learn to type text, navigate files, and appreciate Vim's modes.
-              <br></p>
-            </div>
-            <div class="card-action">
-                <a href="{{ url_for('module', number=1) }}">Learn Now
-              <i class="material-icons right">play_arrow
-              </i>
+                <div class="card small darken-2 z-depth-5">
+                  <div class="card-content ">
+                    <span class="card-title">Basic Editing</span>
+                    <hr>
+                    <p>
+                      <br>
+                      Learn to type text, navigate files, and appreciate Vim's modes.
+                      <br>
+                    </p>
+                  </div>
+                  <div class="card-action">
+                    <a href="{{ url_for('module', number=1) }}">Learn Now
+                      <i class="material-icons right">play_arrow
+                      </i>
+                    </a>
+                  </div>
+                </div>
               </a>
             </div>
-          </div>
-              </a>
-        </div>
 
-        <div class="col s12 m4">
+            <div class="col s12 m4">
               <a href="{{ url_for('module', number=2) }}">
-          <div class="card small darken-2 z-depth-5">
-            <div class="card-content ">
-              <span class="card-title"> Actions + Objects</span>
-              <hr>
-              <p>
-              <br>
-              Learn Vim's elegant syntax for editing text. </p>
-            </div>
-            <div class="card-action">
-              <a href="{{ url_for('module', number=2) }}">Learn Now
-              <i class="material-icons right">play_arrow
-              </i>
+                <div class="card small darken-2 z-depth-5">
+                  <div class="card-content ">
+                    <span class="card-title"> Actions + Objects</span>
+                    <hr>
+                    <p>
+                      <br>
+                      Learn Vim's elegant syntax for editing text.
+                    </p>
+                  </div>
+                  <div class="card-action">
+                    <a href="{{ url_for('module', number=2) }}">Learn Now
+                      <i class="material-icons right">play_arrow
+                      </i>
+                    </a>
+                  </div>
+                </div>
               </a>
             </div>
-          </div>
-              </a>
-        </div>
-        <div class="col s12 m4">
+            <div class="col s12 m4">
               <a href="{{ url_for('module', number=3) }}">
-          <div class="card small darken-2 z-depth-5">
-            <div class="card-content ">
-              <span class="card-title">Moving Fast</span>
-              <hr>
-              <p>
-              <br>
-              Learn to zoom around a file.</p>
-            </div>
-            <div class="card-action">
-              <a href="{{ url_for('module', number=3) }}">Learn Now
-              <i class="material-icons right">play_arrow
-              </i>
+                <div class="card small darken-2 z-depth-5">
+                  <div class="card-content ">
+                    <span class="card-title">Moving Fast</span>
+                    <hr>
+                    <p>
+                      <br>
+                      Learn to zoom around a file.
+                    </p>
+                  </div>
+                  <div class="card-action">
+                    <a href="{{ url_for('module', number=3) }}">Learn Now
+                      <i class="material-icons right">play_arrow
+                      </i>
+                    </a>
+                  </div>
+                </div>
               </a>
             </div>
           </div>
-              </a>
-        </div>
-        </div>
 
-      <div class="row">
-          <br>
-          <br>
-        <div class="col s12 m4">
+          <div class="row">
+            <br>
+            <br>
+            <div class="col s12 m4">
               <a href="{{ url_for('private_module', number=4) }}">
-          <div class="card small card-hover  darken-2 z-depth-5">
-            <div class="card-content ">
-              <span class="card-title">
-                  Super Powers
-                <p class="yellow-text  text-accent-2 right" style="font-size: 10px;">
-                <i class="material-icons">
-                    card_membership
-                </i>
-                pro
-                </p>
-              </span>
-              <hr>
-              <p>Gain super powers for manipualting text visually, inserting the same text on multiple lines, and repeating the same action over and over without additional work!</p>
-            </div>
-            <div class="card-action">
-              <a href="{{ url_for('private_module', number=4) }}">Learn Now
-              <i class="material-icons right">play_arrow
-              </i>
+                <div class="card small card-hover  darken-2 z-depth-5">
+                  <div class="card-content ">
+                    <span class="card-title">
+                      Super Powers
+                      <p class="yellow-text  text-accent-2 right" style="font-size: 10px;">
+                        <i class="material-icons">
+                          card_membership
+                        </i>
+                        pro
+                      </p>
+                    </span>
+                    <hr>
+                    <p>Gain super powers for manipualting text visually, inserting the same text on multiple lines, and
+                      repeating the same action over and over without additional work!</p>
+                  </div>
+                  <div class="card-action">
+                    <a href="{{ url_for('private_module', number=4) }}">Learn Now
+                      <i class="material-icons right">play_arrow
+                      </i>
+                    </a>
+                  </div>
+                </div>
               </a>
             </div>
-          </div>
-            </a>
-        </div>
-        <div class="col s12 m4">
+            <div class="col s12 m4">
               <a href="{{ url_for('private_module', number=5) }}">
-          <div class="card small card-hover darken-2 z-depth-5">
-            <div class="card-content">
-              <span class="card-title">
-                  Automate
-              </span>
-                <p class="yellow-text  text-accent-2 right" style="font-size: 10px;">
-                <i class="material-icons">
-                    card_membership
-                </i>
-                pro
-                </p>
-              <hr>
-              <p>Learn how to automate text editing.</p>
-            </div>
-            <div class="card-action">
-              <a href="{{ url_for('private_module', number=5) }}">Learn Now
-              <i class="material-icons right">play_arrow
-              </i>
+                <div class="card small card-hover darken-2 z-depth-5">
+                  <div class="card-content">
+                    <span class="card-title">
+                      Automate
+                    </span>
+                    <p class="yellow-text  text-accent-2 right" style="font-size: 10px;">
+                      <i class="material-icons">
+                        card_membership
+                      </i>
+                      pro
+                    </p>
+                    <hr>
+                    <p>Learn how to automate text editing.</p>
+                  </div>
+                  <div class="card-action">
+                    <a href="{{ url_for('private_module', number=5) }}">Learn Now
+                      <i class="material-icons right">play_arrow
+                      </i>
+                    </a>
+                  </div>
+                </div>
               </a>
             </div>
-          </div>
-            </a>
-        </div>
-        <div class="col s12 m4">
+            <div class="col s12 m4">
               <a href="{{ url_for('private_module', number=6) }}">
-          <div class="card small card-hover darken-2 z-depth-5">
-            <div class="card-content">
-              <span class="card-title">
-                  Code Efficiently
-              </span>
-                <p class="yellow-text  text-accent-2 right" style="font-size: 10px;">
-                <i class="material-icons">
-                    card_membership
-                </i>
-                pro
-                </p>
-              <hr>
-              <p>Learn tips for coding efficiently in Vim. 
-              From Python and Ruby to Javascript and HTML.
-              </p>
-            </div>
-            <div class="card-action">
-              <a href="{{ url_for('private_module', number=6) }}">Learn Now
-              <i class="material-icons right">play_arrow
-              </i>
+                <div class="card small card-hover darken-2 z-depth-5">
+                  <div class="card-content">
+                    <span class="card-title">
+                      Code Efficiently
+                    </span>
+                    <p class="yellow-text  text-accent-2 right" style="font-size: 10px;">
+                      <i class="material-icons">
+                        card_membership
+                      </i>
+                      pro
+                    </p>
+                    <hr>
+                    <p>Learn tips for coding efficiently in Vim.
+                    </p>
+                  </div>
+                  <div class="card-action">
+                    <a href="{{ url_for('private_module', number=6) }}">Learn Now
+                      <i class="material-icons right">play_arrow
+                      </i>
+                    </a>
+                  </div>
+                </div>
               </a>
             </div>
           </div>
-            </a>
-        </div>
-      </div>
 
         </div>
       </div>
-    <div class="section"></div>
-  </div>
+      <div class="section"></div>
+    </div>
 
-  <div class="container">
-    <div class="section">
+    <div class="container">
+      <div class="section">
       </div>
-  </div>
-    </main>
+    </div>
+  </main>
   <footer class="page-footer" style="background-color:#111921;">
     <div class="footer-copyright" style="background-color:#111921;">
       <div class="container">
-      Made by <a class="blue-grey-text text-lighten-1" href="http://markibrahim.me/">Mark Ibrahim</a>
+        Made by <a class="blue-grey-text text-lighten-1" href="http://markibrahim.me/">Mark Ibrahim</a>
       </div>
     </div>
   </footer>
@@ -228,14 +236,16 @@
 
   <!-- Google Analytics-->
   <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-  
+    (function (i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date(); a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
     ga('create', 'UA-98340696-1', 'auto');
     ga('send', 'pageview');
-  
+
   </script>
   <!-- Google Search Structured Data -->
   <script type="application/ld+json">
@@ -246,5 +256,6 @@
   "description": "Learn Vim interactively"
   }
   </script>
-  </body>
+</body>
+
 </html>
